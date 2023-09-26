@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ECOSEES</string>
+    <string name="login">Log in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome">Welcome To EcoSees</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">forget password?</string>
+    <string name="dont_have_account">Don’t have account?</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="facebook">continue with Facebook</string>
+    <string name="google">continue with Google</string>
+    <string name="or">OR</string>
+    <string name="user_name">User name</string>
+    <string name="verify_the_password">Verify the Password</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="email_password_wrong">Email or Password are wrong, please enter them again</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+
+</resources>

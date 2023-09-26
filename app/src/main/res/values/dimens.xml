@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="mar_rig_lift">20dp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_big">24sp</dimen>
+
+
+</resources>
