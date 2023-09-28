@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_profile_photo"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@drawable/photo_background"
+                >
+
+                <ImageView
+                    android:id="@+id/profile_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_profile_photo" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                >
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_big"
+                    />
+
+                <ImageButton
+                    android:id="@+id/user_name_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/user_name_edit"
+                    android:layout_toRightOf="@+id/user_name"
+                    android:layout_margin="8dp"
+
+                    />
+
+            </RelativeLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/user_email"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_color"
+                />
+
+
+            <TextView
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="@dimen/mar_rig_lift"
+                android:text="@string/settings"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginStart="@dimen/mar_rig_lift"
+                android:drawableStart="@mipmap/email"
+                android:drawableEnd="@drawable/right_list"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingEnd="@dimen/mar_rig_lift"
+                android:text="@string/email"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginStart="@dimen/mar_rig_lift"
+                android:drawableStart="@drawable/password"
+                android:drawableEnd="@drawable/right_list"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingEnd="@dimen/mar_rig_lift"
+                android:text="@string/password"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/change_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginStart="@dimen/mar_rig_lift"
+                android:drawableStart="@drawable/location"
+                android:drawableEnd="@drawable/right_list"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingEnd="@dimen/mar_rig_lift"
+                android:text="@string/change_location"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginStart="@dimen/mar_rig_lift"
+                android:drawableStart="@drawable/logout"
+                android:drawableEnd="@drawable/right_list"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingEnd="@dimen/mar_rig_lift"
+                android:text="@string/logout"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/add_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginStart="@dimen/mar_rig_lift"
+                android:drawableStart="@drawable/profile_circle"
+                android:drawableEnd="@drawable/right_list"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingEnd="@dimen/mar_rig_lift"
+                android:text="@string/add_account"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
