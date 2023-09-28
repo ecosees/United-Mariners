@@ -37,7 +37,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
     try {
       geocoder = new Geocoder(this, Locale.getDefault());
       addresses = geocoder.getFromLocation(latitude, longitude, 1);
-      Log.d("suzan", addresses.toString());
+  //    Log.d("mohamed", addresses.toString());
       String address = addresses.get(0).getAddressLine(0);
       String city = addresses.get(0).getLocality();
       String state = addresses.get(0).getAdminArea();
@@ -48,7 +48,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
       e.printStackTrace();
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-      Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+     // Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
     }
   }
 }
