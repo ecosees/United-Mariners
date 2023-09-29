@@ -4,6 +4,9 @@
     <dimen name="mar_rig_lift">20dp</dimen>
     <dimen name="text_size_small">16sp</dimen>
     <dimen name="text_size_big">24sp</dimen>
+    <dimen name="margin_top">42dp</dimen>
+    <dimen name="drawable_padding">16dp</dimen>
+
 
 
 </resources>

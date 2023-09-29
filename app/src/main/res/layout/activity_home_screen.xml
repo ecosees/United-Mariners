@@ -17,12 +17,12 @@
         android:weightSum="4">
 
         <RelativeLayout
-            android:id="@+id/img_phote"
+            android:id="@+id/img_photo"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/photo_background"
-            android:orientation="vertical">
+           >
 
             <ImageView
                 android:id="@+id/photo"
@@ -37,7 +37,7 @@
         <LinearLayout
             android:id="@+id/liner1111"
             android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/img_phote"
+            android:layout_toRightOf="@+id/img_photo"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_centerVertical="true"
