@@ -3,9 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+ <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,11 +60,12 @@
                     android:id="@+id/user_name_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/user_name_edit"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_toRightOf="@+id/user_name"
-                    android:layout_margin="8dp"
-
-                    />
+                    android:background="@drawable/user_name_edit" />
 
             </RelativeLayout>
 
@@ -154,6 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_top"
                 android:layout_marginStart="@dimen/mar_rig_lift"
+                android:layout_marginBottom="20dp"
                 android:drawableStart="@drawable/profile_circle"
                 android:drawableEnd="@drawable/right_list"
                 android:drawablePadding="@dimen/drawable_padding"
@@ -166,5 +172,6 @@
         </LinearLayout>
 
     </RelativeLayout>
+</ScrollView>
 
 </FrameLayout>
