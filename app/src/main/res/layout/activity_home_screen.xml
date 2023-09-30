@@ -65,12 +65,13 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/list"
+            android:id="@+id/btn_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/list"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:onClick="showMenu"
             android:layout_marginEnd="20dp" />
     </RelativeLayout>
       <androidx.cardview.widget.CardView

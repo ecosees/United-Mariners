@@ -27,9 +27,8 @@
             android:id="@+id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/email"
@@ -59,9 +58,8 @@
             android:id="@+id/tv_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/password"
@@ -95,8 +93,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"
             android:text="@string/forget_password"
             android:textAllCaps="false"
             android:textColor="@color/text_color"
@@ -120,7 +118,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -154,40 +152,20 @@
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size_small" />
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_facebook"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text"
-                android:drawableStart="@drawable/facebook"
-                android:text="@string/facebook"
-                android:textAllCaps="false"
-                android:textColor="@color/text_color"
-                android:textSize="18sp" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_google"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/mar_rig_lift"
+                android:layout_marginLeft="@dimen/mar_rig_lift"
+                android:layout_marginTop="@dimen/mar_rig_lift"
                 android:background="@drawable/edit_text"
                 android:drawableStart="@drawable/google"
                 android:text="@string/google"
                 android:textAllCaps="false"
+
                 android:textColor="@color/text_color"
                 android:textSize="18sp" />
-        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

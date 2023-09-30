@@ -3,10 +3,13 @@ package com.example.unitedmariners;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +22,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
   List<Address> addresses = new ArrayList<>();
   Geocoder geocoder;
   EditText et_location;
+  Button start;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,14 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
         .replace(R.id.frame_layout, new MapsFragment())
         .commit();
     et_location = findViewById(R.id.et_Location);
+    start=findViewById(R.id.startbtn);
+    start.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent=new Intent(getApplicationContext(), home_screen_Activity.class);
+        startActivity(intent);
+      }
+    });
   }
 
   @Override

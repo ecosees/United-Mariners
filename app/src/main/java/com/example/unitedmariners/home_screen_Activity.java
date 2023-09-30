@@ -7,9 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SurfaceControl;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -18,7 +24,7 @@ import java.util.ArrayList;
 
 public class home_screen_Activity extends AppCompatActivity {
     RecyclerView rv;
-
+    ImageButton menu_btn;
     BottomNavigationView bottomNavigationView;
     SearchFragment searchFragment=new SearchFragment();
     CommunityFragment communityFragment=new CommunityFragment();
@@ -29,19 +35,13 @@ public class home_screen_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         rv=findViewById(R.id.rv_home);
+        menu_btn=findViewById(R.id.btn_menu);
         ArrayList <DataHome> showData=new ArrayList<>();
         showData.add(new DataHome(R.drawable.background_img,"see","Lorem Ipsum is simply dummy text" +
                 " ofthe printing and Lorem Lorem Ipsum is" +
                 " simply Ipsum is simply dummy text of the printing and " +
                 "Lorem Ipsum is simply dummy text of "));
-        showData.add(new DataHome(R.drawable.background_img,"see","Lorem Ipsum is simply dummy text" +
-                " ofthe printing and Lorem Lorem Ipsum is" +
-                " simply Ipsum is simply dummy text of the printing and " +
-                "Lorem Ipsum is simply dummy text of "));
-        showData.add(new DataHome(R.drawable.background_img,"see","Lorem Ipsum is simply dummy text" +
-                " ofthe printing and Lorem Lorem Ipsum is" +
-                " simply Ipsum is simply dummy text of the printing and " +
-                "Lorem Ipsum is simply dummy text of "));
+
         showData.add(new DataHome(R.drawable.background_img,"see","Lorem Ipsum is simply dummy text" +
                 " ofthe printing and Lorem Lorem Ipsum is" +
                 " simply Ipsum is simply dummy text of the printing and " +
@@ -52,6 +52,12 @@ public class home_screen_Activity extends AppCompatActivity {
         rv.setAdapter(adapter);
         rv.setLayoutManager(lm);
         fragmentShow();
+        menu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMenu(view); // Call the showMenu method when the ImageButton is clicked.
+            }
+        });
 
 
     }
@@ -91,4 +97,50 @@ public class home_screen_Activity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public boolean onCreatePanelMenu(int featureId, @NonNull Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    public void showMenu(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.menu, popup.getMenu());
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                // Handle the menu item click here
+                switch (item.getItemId())
+                {
+                    case R.id.all:
+                        Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.information:
+                        Toast.makeText(getApplicationContext(), "information", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.swimming:
+                        Toast.makeText(getApplicationContext(), "swimming", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.nearest_Places:
+                        Toast.makeText(getApplicationContext(), "nearest_Places", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.water_source:
+                        Toast.makeText(getApplicationContext(), "water_source", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.quality:
+                        Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        popup.show();
+    }
+
 }
