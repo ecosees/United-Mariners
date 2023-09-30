@@ -191,7 +191,9 @@
                 android:textAllCaps="false"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/text_size_small"
+                android:clickable="true"
                 />
+
 
 
         </LinearLayout>
