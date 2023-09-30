@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".sign_up_screen">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,9 +29,8 @@
             android:id="@+id/tv_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/user_name"
@@ -59,9 +60,8 @@
             android:id="@+id/s_tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/email"
@@ -91,9 +91,8 @@
             android:id="@+id/s_tv_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/password"
@@ -125,9 +124,8 @@
             android:id="@+id/tv_verify_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/password"
@@ -198,5 +196,5 @@
 
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
+</ScrollView>

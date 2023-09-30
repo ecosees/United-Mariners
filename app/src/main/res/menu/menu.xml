@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <item android:id="@+id/all"
+       android:title="All" />
+    <item android:id="@+id/information"
+        android:title="Information"/>
+    <item android:id="@+id/water_source"
+        android:title="Water Source"/>
+    <item android:id="@+id/nearest_Places"
+    android:title="Nearest Places"/>
+    <item android:id="@+id/quality"
+    android:title="Quality of Water"/>
+    <item android:id="@+id/swimming"
+        android:title="Swimming"/>
+
+</menu>
