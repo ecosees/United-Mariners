@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "765351878392",
+    "project_id": "united-mariners-ce2be",
+    "storage_bucket": "united-mariners-ce2be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765351878392:android:efb9e707660def78f0a50d",
+        "android_client_info": {
+          "package_name": "com.example.unitedmariners"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACcytGr45MOgZaoRsGVGLeWRAhbwRfmSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

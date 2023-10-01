@@ -16,14 +16,26 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class login_screen extends AppCompatActivity {
   EditText et_email,et_password;
   TextView tv_forget_password;
   Button btn_login,btn_create_an_account,btn_facebook,btn_google;
 
-  FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+  FirebaseAuth mAuth ;
 
+  @Override
+  public void onStart() {
+    super.onStart();
+    // Check if user is signed in (non-null) and update UI accordingly.
+    FirebaseUser currentUser = mAuth.getCurrentUser();
+    if(currentUser != null){
+      Intent intent = new Intent(login_screen.this, MapsActivity.class);
+      startActivity(intent);
+      finish();
+    }
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +44,7 @@ public class login_screen extends AppCompatActivity {
 
     et_email = findViewById(R.id.et_email);
     et_password = findViewById(R.id.et_password);
+     mAuth = FirebaseAuth.getInstance();
 
     tv_forget_password = findViewById(R.id.tv_forget_password);
     btn_login = findViewById(R.id.btn_login);
@@ -51,38 +64,37 @@ public class login_screen extends AppCompatActivity {
     btn_login.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        String email, password;
-        email = String.valueOf(et_email.getText());
-        password = String.valueOf(et_password.getText());
-
-        if (TextUtils.isEmpty(email)){
-          Toast.makeText(login_screen.this,"Enter email",Toast.LENGTH_SHORT).show();
-          return;
-        }
-        if (TextUtils.isEmpty(password)){
-          Toast.makeText(login_screen.this,"enter password",Toast.LENGTH_SHORT).show();
-          return;
-        }
-
-        firebaseAuth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                  @Override
-                  public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                      Toast.makeText(login_screen.this,"login successful",Toast.LENGTH_SHORT).show();
-                      Intent intent = new Intent(login_screen.this,MapsActivity.class);
-                      startActivity(intent);
-                      finish();
-                    }
-                    else {
-                      Toast.makeText(login_screen.this,"failled",Toast.LENGTH_SHORT).show();
-
-                    }
-                  }
-                });
-
+  authLogin();
       }
     });
+  }
+  public void authLogin(){
+    String email, password;
+    email = String.valueOf(et_email.getText());
+    password = String.valueOf(et_password.getText());
+    if (TextUtils.isEmpty(email)){
+      Toast.makeText(login_screen.this,"Enter email",Toast.LENGTH_SHORT).show();
+      return;
+    }
+    if (TextUtils.isEmpty(password)){
+      Toast.makeText(login_screen.this,"enter password",Toast.LENGTH_SHORT).show();
+      return;
+    }
+    mAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+              @Override
+              public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                  Toast.makeText(login_screen.this, "Login successful", Toast.LENGTH_SHORT).show();
+                  Intent intent = new Intent(login_screen.this, MapsActivity.class);
+                  startActivity(intent);
+                  finish();
+
+                } else {
+                  Toast.makeText(login_screen.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                }
+              }
+            });
 
 
   }
