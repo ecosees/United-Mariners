@@ -30,7 +30,9 @@
 
         <activity
             android:name=".MapsActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".home_screen_Activity"
             android:exported="false" >
