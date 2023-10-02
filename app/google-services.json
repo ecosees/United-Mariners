@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "911332902814",
+    "firebase_url": "https://ecosees-8e49a-default-rtdb.firebaseio.com",
+    "project_id": "ecosees-8e49a",
+    "storage_bucket": "ecosees-8e49a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911332902814:android:1a96083a8e9d7ada95b88f",
+        "android_client_info": {
+          "package_name": "com.example.unitedmariners"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911332902814-pg2k08jsor07rair2hcvgvqdlbe8rfct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unitedmariners",
+            "certificate_hash": "a11c239994c9b4652336f4803e2d8f4102ff652a"
+          }
+        },
+        {
+          "client_id": "911332902814-grmcq42s22jp7j40o6775d2ubso9igqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUxuNfgIu2HLetvlKwaeA5-dXDnmHZFmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911332902814-grmcq42s22jp7j40o6775d2ubso9igqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
