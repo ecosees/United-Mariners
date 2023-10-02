@@ -22,7 +22,6 @@ public class login_screen extends AppCompatActivity {
   TextView tv_forget_password;
   Button btn_login,btn_create_an_account,btn_facebook,btn_google;
 
-
   FirebaseAuth mAuth ;
 
   @Override
@@ -41,7 +40,7 @@ public class login_screen extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login_scrren);
-
+    mAuth = FirebaseAuth.getInstance();
     et_email = findViewById(R.id.et_email);
     et_password = findViewById(R.id.et_password);
    tv_forget_password = findViewById(R.id.tv_forget_password);
