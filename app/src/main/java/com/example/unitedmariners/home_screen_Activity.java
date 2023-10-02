@@ -5,14 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.SurfaceControl;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -21,7 +19,6 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -48,10 +45,6 @@ public class home_screen_Activity extends AppCompatActivity {
         String userName = getIntent().getStringExtra("userName");
         String profilePic = getIntent().getStringExtra("ProfilePic");
         tv_name.setText(userName);
-        Picasso.get().load(profilePic).into(photo);
-
-
-
         rv=findViewById(R.id.rv_home);
         menu_btn=findViewById(R.id.btn_menu);
         ArrayList <DataHome> showData=new ArrayList<>();
