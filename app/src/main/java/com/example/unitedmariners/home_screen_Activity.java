@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -48,9 +47,6 @@ public class home_screen_Activity extends AppCompatActivity {
         String userName = getIntent().getStringExtra("userName");
         String profilePic = getIntent().getStringExtra("ProfilePic");
         tv_name.setText(userName);
-        Picasso.get().load(profilePic).into(photo);
-
-
 
         rv=findViewById(R.id.rv_home);
         menu_btn=findViewById(R.id.btn_menu);
