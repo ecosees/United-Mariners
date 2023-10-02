@@ -8,21 +8,27 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class login_screen extends AppCompatActivity {
   EditText et_email,et_password;
   TextView tv_forget_password;
   Button btn_login,btn_create_an_account,btn_facebook,btn_google;
 
-  FirebaseAuth mAuth ;
 
+  FirebaseAuth mAuth ;
 
   @Override
   public void onStart() {
@@ -43,18 +49,11 @@ public class login_screen extends AppCompatActivity {
 
     et_email = findViewById(R.id.et_email);
     et_password = findViewById(R.id.et_password);
-    mAuth = FirebaseAuth.getInstance();
-    tv_forget_password = findViewById(R.id.tv_forget_password);
+   tv_forget_password = findViewById(R.id.tv_forget_password);
     btn_login = findViewById(R.id.btn_login);
     btn_create_an_account = findViewById(R.id.btn_create_an_account);
     btn_google = findViewById(R.id.btn_google);
-    btn_login.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        authLogin();
-      }
-    });
-    btn_create_an_account.setOnClickListener(new View.OnClickListener() {
+  btn_create_an_account.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         Intent intent = new Intent(getApplicationContext(), sign_up_screen.class);
@@ -62,8 +61,13 @@ public class login_screen extends AppCompatActivity {
       }
     });
 
+    btn_login.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+  authLogin();
+      }
+    });
   }
-
   public void authLogin(){
     String email, password;
     email = String.valueOf(et_email.getText());

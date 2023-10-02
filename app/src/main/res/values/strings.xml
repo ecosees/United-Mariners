@@ -37,4 +37,8 @@
     <string name="join_our_community">Join Our Community</string>
     <string name="join_group">Join group</string>
 
+    <string name="default_web_client_id" translatable="false">499671316141-0rmp30ir3kn117m1a2s05hd0vduo01gf.apps.googleusercontent.com</string>
+
+
+
 </resources>
