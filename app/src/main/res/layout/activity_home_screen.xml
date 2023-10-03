@@ -106,6 +106,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="@dimen/mar_rig_lift"
         android:layout_marginRight="@dimen/mar_rig_lift"
+        android:layout_marginBottom="30dp"
         />
 
         </LinearLayout>

@@ -5,7 +5,15 @@ import android.widget.ImageView;
 public class DataHome {
     private int img;
     String nameData;
-    String dataabout;
+    int dataabout;
+
+    public int getDataabout() {
+        return dataabout;
+    }
+
+    public void setDataabout(int dataabout) {
+        this.dataabout = dataabout;
+    }
 
     public int getImg() {
         return img;
@@ -23,15 +31,7 @@ public class DataHome {
         this.nameData = nameData;
     }
 
-    public String getDataabout() {
-        return dataabout;
-    }
-
-    public void setDataabout(String dataabout) {
-        this.dataabout = dataabout;
-    }
-
-    public DataHome(int img, String nameData, String dataabout) {
+    public DataHome(int img, String nameData, int dataabout) {
         this.img = img;
         this.nameData = nameData;
         this.dataabout = dataabout;
