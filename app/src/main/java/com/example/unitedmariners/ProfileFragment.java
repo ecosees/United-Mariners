@@ -33,16 +33,12 @@ FirebaseUser user;
         profile_photo=v.findViewById(R.id.profile_photo);
         change_location =v.findViewById(R.id.change_location);
         add_account =v.findViewById(R.id.add_account);
-
-
-
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), login_screen.class);
                 startActivity(intent);
                 requireActivity().finish();
-
             }
         });
 
@@ -52,8 +48,7 @@ FirebaseUser user;
             public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), MapsActivity.class);
                     startActivity(intent);
-                    requireActivity().finish();
-
+                requireActivity().finish();
             }
         });
 
@@ -63,7 +58,6 @@ FirebaseUser user;
                 Intent intent = new Intent(getActivity(), sign_up_screen.class);
                 startActivity(intent);
                 requireActivity().finish();
-
             }
         });
 
