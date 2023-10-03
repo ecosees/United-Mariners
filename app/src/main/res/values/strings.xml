@@ -37,10 +37,35 @@
     <string name="join_our_community">Join Our Community</string>
     <string name="join_group">Join group</string>
     //AllData
+    //The Mediterranean Sea
+    <string name="Sea_Turtle">Despite the fact that sea turtles have been living on earth for 200 million years, witnessed the extinction of many animals, and seemed tolerant and adaptable to extreme climate changes, only recently a huge decline in their numbers and gatherings has been noticed around the globe due to one main weak point they have: nesting on sandy beaches.</string>
+    <string name="Dugong">The dugong, which is commonly known in Egypt as “mermaid” and sometimes “sea cow”, is one of the most endangered marine species worldwide due to the loss of seagrass habitat because of coastal development and sea pollution</string>
+    <string name="Whale_Shark">Whale sharks, commonly known as “Bahloul” by local fishermen, are the largest known extant fish species. The largest confirmed whale shark had a length of 12.65m (41.5 ft) and a weight of about 21.5 tons (47,000 lb), while its height commonly ranges between five to 10 metres.</string>
+
     //red sea
     <string name="European_Eel">The European Eel is also considered endangered. Overfishing, habitat degradation, and barriers to migration are some of the challenges it faces.</string>
     <string name="Mediterranean">This mammal is listed as endangered. Factors like habitat disturbance, pollution, and human activities pose significant threats to its survival</string>
     <string name="Sturgeon">Russian Sturgeon, a fish species, is also endangered. Overfishing and habitat degradation are major factors contributing to its decline.</string>
+    //The Nile River
+    <string name="Native_Fish">Egypt is not only lined with coasts along the Mediterranean and Red Seas, but it also holds one of the largest rivers in the world, the Nile River. These bodies of water are all rich in underwater life, attracting many anglers to the area.</string>
+    <string name="Lion_Fish">The lionfish is a carnivorous fish native to the Indo-Pacific region but has become an invasive species in the Atlantic Ocean. Lionfish are known for their distinctive physical characteristics, including brown or maroon stripes, fleshy tentacles, and long dorsal spines. They pose a threat to reef ecosystems as they compete for food and space with native species. Researchers have found that a single lionfish residing on a coral reef can reduce the recruitment of native reef fish by 79% , Lionfish reproduce all year and can release millions of eggs annually . Although lionfish are not currently listed as threatened or endangered in their native range, the increase in pollution in coral reefs may impact their population.</string>
+    <string name="Hippopotamus">Hippopotamuses, including the common hippo and the pygmy hippo, are facing extinction. The common hippo is listed as Vulnerable, while the pygmy hippo is classified as Endangered. These species are threatened by widespread poaching for meat and ivory, as well as human encroachment on their habitats. In fact, hippos have already gone regionally extinct in three African countries. The global population estimate for hippos is around 115,000-130,000 individuals, with the largest populations found in eastern and southern Africa  </string>
+    //Swimming
+    <string name="First_Advice">Practice efficient swimming techniques: Swimmers can focus on improving their technique to minimize unnecessary splashing and excessive water displacement, which can lead to water loss.</string>
+    <string name="Second_Advice">When sunscreen dissolves in water, it causes pollution due to the disintegration of the organic materials inside it, which causes fish poisoning.</string>
+    <string name="Third_Advice">Practice responsible fishing techniques: When angling, be mindful of the impact you have on aquatic ecosystems. Handle fish with care, use proper catch-and-release techniques, and avoid unnecessary harm to fish and their habitats. </string>
+    <string name="Fourth_Advice">Learn about fish and aquatic ecosystems: Educate yourself about the different fish species, their habitats, and their conservation needs. Understanding the intricacies of aquatic ecosystems will enable you to make informed decisions that promote their preservation </string>
+    <string name="Fifth_Advice">Use water-efficient equipment: Opt for water-efficient fishing gear and equipment. For example, use low-flow hoses or spray nozzles when cleaning fishing equipment to minimize water wastage</string>
+    //Quality
+    <string name="The_Mediterranean_Sea">While seawater contains - on average - about 35 grams of salt per liter, the oceans and seas are not uniformly salty in general. The closer you are to the poles, the less salinity of the water, as fresh water released from the ice of the frozen poles dilutes the salt concentration. Seawater The average pollution decreases as we move towards European countries, and it decreases in the Arab world</string>
+    <string name="The_Red_Sea">The Red Sea is the saltiest open sea due to the high rate of evaporation and low rainfall. There are isolated seas that contain high levels of salinity, such as the Dead Sea. It is characterized by extremely pure water, which amazes the world.</string>
+    <string name="The_Nile_Rive">Nile pollution is one of the most serious issues hindering Egypts development. According to recent studies conducted by the Egyptian Environmental Affairs Agency, the Nile River and its branches in the governorates suffer from a severe pollution problem, as approximately 4 billion cubic meters annually of agricultural and industrial waste containing acids, organic materials, pesticides, agricultural pesticides, and heavy metals are discharged into bodies of water</string>
+    <string name="The_Atlantic_ocean">The discovered area contains at least 2,800 cubic kilometers (about 739 trillion gallons) of water, which is enough to fill 1.1 billion Olympic-size swimming pools, according to the American CNN network.</string>
+    <string name="Indian_Ocean">cubic and covers an area of ​​about 73,556,000 square kilometers including the Red Sea and the Arabian Gulf. The northern point of the ocean is 30⁰ north of the equator in the Arabian Gulf. The ocean is more than 10,000 kilometers wide between the southern tip of Africa and Australia. It is found in the ocean with a large number of islands demarcating the continental margins. The major island nations in the Indian Ocean include Madagascar, Sri Lanka, Bahrain, Maldives, Mauritius, Seychelles, and the Indonesian archipelago. The average depth of the ocean is 3960 metres, and at the deepest point; Deep Sunda Dry Trench, 7450 meters deep</string>
+
+
+
+
 
 
 
