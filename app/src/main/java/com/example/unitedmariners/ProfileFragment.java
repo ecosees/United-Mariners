@@ -38,6 +38,7 @@ FirebaseUser user;
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getContext(), login_screen.class);
                 startActivity(intent);
+                requireActivity().finish();
             }
         });
         return v;
