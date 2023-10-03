@@ -22,6 +22,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
   List<Address> addresses = new ArrayList<>();
   Geocoder geocoder;
   EditText et_location;
+  String address, city, state, country;
   Button start;
 
   @Override
@@ -34,14 +35,19 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
         .replace(R.id.frame_layout, new MapsFragment())
         .commit();
     et_location = findViewById(R.id.et_Location);
-    start=findViewById(R.id.startbtn);
-    start.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Intent intent=new Intent(getApplicationContext(), home_screen_Activity.class);
-        startActivity(intent);
-      }
-    });
+    start = findViewById(R.id.startbtn);
+    start.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), home_screen_Activity.class);
+            intent.putExtra("key_message1", address);
+            intent.putExtra("key_message2", city);
+            intent.putExtra("key_message3", state);
+            intent.putExtra("key_message4", country);
+            startActivity(intent);
+          }
+        });
   }
 
   @Override
@@ -49,18 +55,17 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
     try {
       geocoder = new Geocoder(this, Locale.getDefault());
       addresses = geocoder.getFromLocation(latitude, longitude, 1);
-  //    Log.d("mohamed", addresses.toString());
-      String address = addresses.get(0).getAddressLine(0);
-      String city = addresses.get(0).getLocality();
-      String state = addresses.get(0).getAdminArea();
-      String country = addresses.get(0).getCountryName();
+      //    Log.d("mohamed", addresses.toString());
+      address = addresses.get(0).getAddressLine(0);
+      city = addresses.get(0).getLocality();
+      state = addresses.get(0).getAdminArea();
+      country = addresses.get(0).getCountryName();
       et_location.setText(address);
-
     } catch (IOException e) {
       e.printStackTrace();
     } catch (IndexOutOfBoundsException e) {
       e.printStackTrace();
-     // Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+      // Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
     }
   }
 }
