@@ -22,7 +22,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
   List<Address> addresses = new ArrayList<>();
   Geocoder geocoder;
   EditText et_location;
-  String address, city, state, country;
+  String address, city, state, country,userName;
   Button start;
 
   @Override
@@ -35,6 +35,8 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
         .replace(R.id.frame_layout, new MapsFragment())
         .commit();
     et_location = findViewById(R.id.et_Location);
+    Intent intent=getIntent();
+    userName=intent.getStringExtra("key");
     start = findViewById(R.id.startbtn);
     start.setOnClickListener(
         new View.OnClickListener() {
@@ -45,6 +47,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
             intent.putExtra("key_message2", city);
             intent.putExtra("key_message3", state);
             intent.putExtra("key_message4", country);
+            intent.putExtra("key_message5", userName);
             startActivity(intent);
           }
         });

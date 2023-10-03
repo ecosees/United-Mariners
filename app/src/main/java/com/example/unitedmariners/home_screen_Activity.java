@@ -28,10 +28,11 @@ import java.util.List;
 public class home_screen_Activity extends AppCompatActivity {
   RecyclerView rv;
   ImageButton menu_btn;
-  String location, city, country, state;
+  String location, city, country, state,userName;
   ImageView photo;
-
-  TextView tv_name;
+  TextView srcFirst;
+  TextView srcSecond;
+  TextView srcThird;
   int general =-1;
   ArrayList<String> redSea=new ArrayList<>();
   ArrayList<String> whiteSea=new ArrayList<>();
@@ -47,7 +48,6 @@ public class home_screen_Activity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home_screen);
     photo = findViewById(R.id.photo);
-    tv_name = findViewById(R.id.tv_name);
     fragmentShow();
     rv = findViewById(R.id.rv_home);
     menu_btn = findViewById(R.id.btn_menu);
@@ -63,6 +63,7 @@ public class home_screen_Activity extends AppCompatActivity {
     city = intent.getStringExtra("key_message2");
     country = intent.getStringExtra("key_message3");
     state = intent.getStringExtra("key_message4");
+    userName = intent.getStringExtra("key_message5");
     Log.d("mohamed", country);
     listCountry(country);
     Log.d("mohamed", String.valueOf(general));
