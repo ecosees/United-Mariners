@@ -28,7 +28,7 @@ public class home_screen_Activity extends AppCompatActivity {
   ImageView photo;
 
   TextView tv_name;
-
+  int general=1;
   BottomNavigationView bottomNavigationView;
   SearchFragment searchFragment = new SearchFragment();
   CommunityFragment communityFragment = new CommunityFragment();
@@ -122,13 +122,8 @@ public class home_screen_Activity extends AppCompatActivity {
             switch (item.getItemId()) {
               case R.id.all:
                 AllData all = new AllData();
-                setupArraylist(all.allData());
+                setupArraylist(all.allData(general));
                 Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
-                return true;
-              case R.id.information:
-                AllData information = new AllData();
-                setupArraylist(information.information());
-                Toast.makeText(getApplicationContext(), "information", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.swimming:
                 AllData swimming = new AllData();
