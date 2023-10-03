@@ -28,7 +28,7 @@ public class home_screen_Activity extends AppCompatActivity {
   ImageView photo;
 
   TextView tv_name;
-
+  int general=1;
   BottomNavigationView bottomNavigationView;
   SearchFragment searchFragment = new SearchFragment();
   CommunityFragment communityFragment = new CommunityFragment();
@@ -121,34 +121,29 @@ public class home_screen_Activity extends AppCompatActivity {
             // Handle the menu item click here
             switch (item.getItemId()) {
               case R.id.all:
-                AllData all=new AllData();
-                setupArraylist(all.allData());
+                AllData all = new AllData();
+                setupArraylist(all.allData(general));
                 Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
                 return true;
-              case R.id.information:
-                AllData information=new AllData();
-                setupArraylist(information.information());
-                Toast.makeText(getApplicationContext(), "information", Toast.LENGTH_SHORT).show();
-                return true;
               case R.id.swimming:
-                AllData swimming=new AllData();
+                AllData swimming = new AllData();
                 setupArraylist(swimming.swimming());
                 Toast.makeText(getApplicationContext(), "swimming", Toast.LENGTH_SHORT).show();
                 return true;
 
               case R.id.nearest_Places:
-                AllData nearest_Places=new AllData();
+                AllData nearest_Places = new AllData();
                 setupArraylist(nearest_Places.nearest_Places());
                 Toast.makeText(getApplicationContext(), "nearest_Places", Toast.LENGTH_SHORT)
                     .show();
                 return true;
               case R.id.water_source:
-                AllData water_source=new AllData();
+                AllData water_source = new AllData();
                 setupArraylist(water_source.water_source());
                 Toast.makeText(getApplicationContext(), "water_source", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.quality:
-                AllData quality=new AllData();
+                AllData quality = new AllData();
                 setupArraylist(quality.quality());
                 Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT)
                     .show();
@@ -163,7 +158,7 @@ public class home_screen_Activity extends AppCompatActivity {
 
   public void setupArraylist(ArrayList<DataHome> setData) {
     ArrayList<DataHome> showData = new ArrayList<>();
-    showData=setData;
+    showData = setData;
     AdapterHomeInformation adapter = new AdapterHomeInformation(showData);
     RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
     rv.setHasFixedSize(true);
