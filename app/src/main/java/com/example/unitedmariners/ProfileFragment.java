@@ -41,6 +41,7 @@ FirebaseUser user;
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), login_screen.class);
                 startActivity(intent);
+                requireActivity().finish();
 
             }
         });
@@ -51,6 +52,7 @@ FirebaseUser user;
             public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), MapsActivity.class);
                     startActivity(intent);
+                    requireActivity().finish();
 
             }
         });
@@ -60,6 +62,7 @@ FirebaseUser user;
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), sign_up_screen.class);
                 startActivity(intent);
+                requireActivity().finish();
 
             }
         });
