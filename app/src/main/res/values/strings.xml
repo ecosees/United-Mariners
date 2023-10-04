@@ -20,7 +20,7 @@
     <string name="already_have_account">Already have account?</string>
     <string name="email_password_wrong">Email or Password are wrong, please enter them again</string>
     <string name="title_activity_maps">MapsActivity</string>
-        <string name="water">Water Of Source</string>
+    <string name="water">Water Of Source</string>
     <string name="welcomex">welcome</string>
     <string name="name">John smith</string>
     <string name="search_hint">Search</string>

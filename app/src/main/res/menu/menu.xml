@@ -2,16 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
    <item android:id="@+id/all"
-       android:title="All" />
-    <item android:id="@+id/information"
-        android:title="Information"/>
-    <item android:id="@+id/water_source"
-        android:title="Water Source"/>
+     android:title="All"/>
+   <item android:id="@+id/Endangered"
+       android:title="Endangered Species" />
     <item android:id="@+id/nearest_Places"
     android:title="Nearest Places"/>
     <item android:id="@+id/quality"
     android:title="Quality of Water"/>
+    <item android:id="@+id/water_source"
+     android:title="Water Source"/>
     <item android:id="@+id/swimming"
-        android:title="Swimming"/>
-
+     android:title="Swimming"/>
+    <item android:id="@+id/aroundWorld"
+     android:title="Around World"/>
 </menu>

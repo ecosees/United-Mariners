@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,19 +19,18 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class home_screen_Activity extends AppCompatActivity {
   RecyclerView rv;
   ImageButton menu_btn;
   String location, city, country, state,userName;
   ImageView photo;
-  TextView srcFirst;
+
+  TextView srcFirst,txtName;
   TextView srcSecond;
   TextView srcThird;
   int general =-1;
@@ -50,6 +50,7 @@ public class home_screen_Activity extends AppCompatActivity {
     photo = findViewById(R.id.photo);
     fragmentShow();
     rv = findViewById(R.id.rv_home);
+    txtName=findViewById(R.id.tv_name);
     menu_btn = findViewById(R.id.btn_menu);
     menu_btn.setOnClickListener(
         new View.OnClickListener() {
@@ -63,7 +64,6 @@ public class home_screen_Activity extends AppCompatActivity {
     city = intent.getStringExtra("key_message2");
     country = intent.getStringExtra("key_message3");
     state = intent.getStringExtra("key_message4");
-    userName = intent.getStringExtra("key_message5");
     listCountry(country);
   }
 
@@ -133,7 +133,12 @@ public class home_screen_Activity extends AppCompatActivity {
             switch (item.getItemId()) {
               case R.id.all:
                 AllData all = new AllData();
-                setupArraylist(all.allData(general));
+                setupArraylist(all.all(general));
+                Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
+                return true;
+              case R.id.Endangered:
+                AllData Endangered = new AllData();
+                setupArraylist(Endangered.endangered(general));
                 Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.swimming:
@@ -144,20 +149,19 @@ public class home_screen_Activity extends AppCompatActivity {
 
               case R.id.nearest_Places:
                 AllData nearest_Places = new AllData();
-                setupArraylist(nearest_Places.nearest_Places());
+                setupArraylist(nearest_Places.nearest_Places(general));
                 Toast.makeText(getApplicationContext(), "nearest_Places", Toast.LENGTH_SHORT)
                     .show();
                 return true;
-              case R.id.water_source:
-                AllData water_source = new AllData();
-                setupArraylist(water_source.water_source());
-                Toast.makeText(getApplicationContext(), "water_source", Toast.LENGTH_SHORT).show();
+              case R.id.aroundWorld:
+                AllData aroundWorld = new AllData();
+                setupArraylist(aroundWorld.around_world());
+                Toast.makeText(getApplicationContext(), "around_world", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.quality:
                 AllData quality = new AllData();
-                setupArraylist(quality.quality());
-                Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT)
-                    .show();
+                setupArraylist(quality.quality(general));
+                Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT).show();
                 return true;
             }
             return false;
@@ -229,4 +233,6 @@ public class home_screen_Activity extends AppCompatActivity {
 
     return general;
   }
+
+
 }

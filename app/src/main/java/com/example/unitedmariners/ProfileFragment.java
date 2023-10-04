@@ -184,7 +184,6 @@ public class ProfileFragment extends Fragment {
         ImageButton im_back;
         EditText et_name;
         Button btn_save_name;
-
         im_back = view.findViewById(R.id.im_back);
         et_name = view.findViewById(R.id.et_name);
         btn_save_name = view.findViewById(R.id.btn_save_name);
