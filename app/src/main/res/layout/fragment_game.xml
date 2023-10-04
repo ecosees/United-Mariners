@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_game"
+
     tools:context=".GameFragment">
 
     <!-- TODO: Update blank fragment layout -->
