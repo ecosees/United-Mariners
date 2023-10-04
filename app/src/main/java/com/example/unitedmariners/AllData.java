@@ -42,10 +42,14 @@ public class AllData {
   public ArrayList<DataHome> nearest_Places(int general) {
     ArrayList<DataHome> allDataArray = new ArrayList<>();
     if (general==0){//red sea
-      allDataArray.add(new DataHome(R.drawable.european, "European Eel", R.string.European_Eel));
+      allDataArray.add(new DataHome(R.drawable.redsea, "Red Sea", R.string.Red_Sea));
+      allDataArray.add(new DataHome(R.drawable.gulfofsuez, "Gulf of Suez", R.string.Gulf_of_Suez));
+      allDataArray.add(new DataHome(R.drawable.wadi_elgemal_reserve, "Gulf of Suez", R.string.Wadi_El_Gemal_Reserve));
 
 
     }else if(general==1){// white sea
+      allDataArray.add(new DataHome(R.drawable.mediterraneansea, "Mediterranean Sea", R.string.Mediterranean_Sea));
+
 
 
     }else if(general==2){//nile
@@ -90,6 +94,11 @@ public class AllData {
   public ArrayList<DataHome> around_world() {
     ArrayList<DataHome> allDataArray = new ArrayList<>();
     // data world
+    allDataArray.add(new DataHome(R.drawable.vaquita, "Vaquita", R.string.Vaquita));
+    allDataArray.add(new DataHome(R.drawable.right_whale, "North Atlantic Right Whale", R.string.North_Atlantic_right_whale));
+    allDataArray.add(new DataHome(R.drawable.kemps, "Kemps Ridley Sea Turtle", R.string.Kemps_Ridley_Sea_Turtle));
+    allDataArray.add(new DataHome(R.drawable.blue_whale, "Blue Whale", R.string.Blue_Whale));
+    allDataArray.add(new DataHome(R.drawable.kemps, "First Advice", R.string.Kemps_Ridley_Sea_Turtle));
     allDataArray.add(new DataHome(R.drawable.swimming, "First Advice", R.string.First_Advice));
     return allDataArray;
   }
