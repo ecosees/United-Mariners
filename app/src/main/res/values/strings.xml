@@ -41,8 +41,13 @@
     <string name="change">Change</string>
     <string name="delete">Delete</string>
     <string name="save">Save</string>
-
-
+    <string name="game_name">Ecoseas game</string>
+    <string name="level1">Level 1</string>
+    <string name="level2">Level 2</string>
+    <string name="level3">Level 3</string>
+    <string name="level4">Level 4</string>
+    <string name="name_of_animal">The name of this animal is...</string>
+    <string name="try_again">Try again</string>
 
 
     //AllData
@@ -83,14 +88,6 @@
     <string name="Blue_Whale">The blue whale is a marine mammal and a baleen whale. Reaching a maximum confirmed length of 29.9 meters and weighing up to 199 tonnes, it is the largest animal known ever to have existed. The blue whales long and slender body can be of various shades of greyish-blue dorsally and somewhat lighter underneath</string>
     <string name="Humphead_Wrasse">The humphead wrasse is a large species of wrasse mainly found on coral reefs in the Indo-Pacific region. It is also known as the Māori wrasse, Napoleon wrasse, Napoleon fish, Napoleonfish, so mei, mameng, and merer in the Pohnpeian language of the Caroline Islands.</string>
     <string name="West_Indian_Manatee">The West Indian manatee, also known as the North American manatee, is a large, aquatic mammal native to warm coastal areas of the Caribbean, from the eastern US to northern Brazil. Living alone or in herds, it feeds on underwater plants and uses its whiskers to navigate.</string>
-
-
-
-
-
-
-
-
 
 
 </resources>
