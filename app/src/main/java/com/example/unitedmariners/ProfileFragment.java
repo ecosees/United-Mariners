@@ -60,7 +60,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 setNameDialog();
                 dialog.show();
-                Log.d("suzan" , "set on click");
+                Log.d("suzan", "set on click");
             }
         });
 
@@ -99,15 +99,15 @@ public class ProfileFragment extends Fragment {
 
         });
 
-    add_account.setOnClickListener(
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-            Intent intent = new Intent(getActivity(), sign_up_screen.class);
-            startActivity(intent);
-            requireActivity().finish();
-          }
-        });
+        add_account.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), sign_up_screen.class);
+                        startActivity(intent);
+                        requireActivity().finish();
+                    }
+                });
 
 
         auth = FirebaseAuth.getInstance();
