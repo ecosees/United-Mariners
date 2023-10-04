@@ -79,6 +79,7 @@ public class ProfileFragment extends Fragment {
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), login_screen.class);
                 startActivity(intent);
                 requireActivity().finish();
