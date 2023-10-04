@@ -47,7 +47,7 @@ public class home_screen_Activity extends AppCompatActivity {
   SearchFragment searchFragment = new SearchFragment();
   CommunityFragment communityFragment = new CommunityFragment();
   ProfileFragment profileFragment = new ProfileFragment();
-  GameFragment gameFragment = new GameFragment();
+  BaseGameFragment baseGameFragment = new BaseGameFragment();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -121,12 +121,12 @@ public class home_screen_Activity extends AppCompatActivity {
               case R.id.game:
                 getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.container, gameFragment)
+                    .replace(R.id.container, baseGameFragment)
                     .commit();
                 return true;
 
               case R.id.home:
-                getSupportFragmentManager().beginTransaction().remove(gameFragment).commit();
+                getSupportFragmentManager().beginTransaction().remove(baseGameFragment).commit();
                 getSupportFragmentManager().beginTransaction().remove(profileFragment).commit();
                 getSupportFragmentManager().beginTransaction().remove(communityFragment).commit();
                 getSupportFragmentManager().beginTransaction().remove(searchFragment).commit();
