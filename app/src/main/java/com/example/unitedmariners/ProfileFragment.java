@@ -2,13 +2,18 @@ package com.example.unitedmariners;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +28,11 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class ProfileFragment extends Fragment {
 
     ImageView profile_photo;
@@ -31,7 +41,7 @@ public class ProfileFragment extends Fragment {
     AlertDialog dialogPhoto;
     ImageView dialog_photo;
 
-
+    String sImg;
     TextView user_name, email, logOut, emailTxt, change_location, add_account;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -51,6 +61,10 @@ public class ProfileFragment extends Fragment {
         profile_photo = v.findViewById(R.id.profile_photo);
         change_location = v.findViewById(R.id.change_location);
         add_account = v.findViewById(R.id.add_account);
+
+        SharedPreferences sh1 =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        profile_photo.setImageBitmap(convertStringToBitmap(sh1.getString("img" , "")));
+
 
 
         /////////////////////////////////////////////////////////////////////////////
@@ -218,9 +232,38 @@ public class ProfileFragment extends Fragment {
             // Get the selected image URI
             Uri selectedImageUri = data.getData();
             dialog_photo.setImageURI(selectedImageUri);
-
-
+            imageRefactored(selectedImageUri);
+            SharedPreferences sh =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sh.edit();
+            editor.putString("img",sImg);
+            editor.apply();
         }
     }
+
+    public Bitmap convertStringToBitmap(String encodedImage) {
+        byte[] decodedBytes = Base64.decode(encodedImage, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+    }
+
+    private void imageRefactored(Uri uri) {
+        try {
+            InputStream inputStream = requireContext().getContentResolver().openInputStream(uri);
+            Bitmap myBitmap = BitmapFactory.decodeStream(inputStream);
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            myBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+            byte[] byteArray = stream.toByteArray();
+            sImg = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
+            if (inputStream != null) {
+                inputStream.close();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

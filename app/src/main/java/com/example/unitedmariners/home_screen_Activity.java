@@ -8,8 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,22 +25,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import java.util.ArrayList;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 public class home_screen_Activity extends AppCompatActivity {
   RecyclerView rv;
   ImageButton menu_btn;
-  String location, city, country, state,userName;
+  String location, city, country, state, userName;
   ImageView photo;
 
-  TextView srcFirst,txtName;
+  TextView srcFirst, txtName;
   TextView srcSecond;
   TextView srcThird;
-  int general =-1;
-  ArrayList<String> redSea=new ArrayList<>();
-  ArrayList<String> whiteSea=new ArrayList<>();
-  ArrayList<String> nile=new ArrayList<>();
+  int general = -1;
+  ArrayList<String> redSea = new ArrayList<>();
+  ArrayList<String> whiteSea = new ArrayList<>();
+  ArrayList<String> nile = new ArrayList<>();
   BottomNavigationView bottomNavigationView;
   SearchFragment searchFragment = new SearchFragment();
   CommunityFragment communityFragment = new CommunityFragment();
@@ -47,20 +53,26 @@ public class home_screen_Activity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home_screen);
-    txtName=findViewById(R.id.tv_name);
+    txtName = findViewById(R.id.tv_name);
     SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
     String userName = sharedPreferences.getString("userName", "None");
     if (txtName != null) {
       txtName.setText(userName);
     }
     photo = findViewById(R.id.photo);
+    SharedPreferences sh = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+    if (sharedPreferences.getString("img", "") != "") {
+      Bitmap bitmap = convertStringToBitmap(sharedPreferences.getString("img", ""));
+      if (bitmap != null) Log.d("suzan", bitmap.toString());
+      photo.setImageBitmap(bitmap);
+    }
+
     fragmentShow();
     rv = findViewById(R.id.rv_home);
-    srcFirst=findViewById(R.id.txtFirstSrc);
-    srcSecond=findViewById(R.id.txtSecondSrc);
-    srcThird=findViewById(R.id.txtThirdSrc);
-
-    srcFirst=findViewById(R.id.txtFirstSrc);
+    srcFirst = findViewById(R.id.txtFirstSrc);
+    srcSecond = findViewById(R.id.txtSecondSrc);
+    srcThird = findViewById(R.id.txtThirdSrc);
+    srcFirst = findViewById(R.id.txtFirstSrc);
     menu_btn = findViewById(R.id.btn_menu);
     menu_btn.setOnClickListener(
         new View.OnClickListener() {
@@ -87,7 +99,7 @@ public class home_screen_Activity extends AppCompatActivity {
           public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
               case R.id.search:
-                String url="https://www.google.com.eg/?hl=ar";
+                String url = "https://www.google.com.eg/?hl=ar";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
                 return true;
@@ -173,7 +185,8 @@ public class home_screen_Activity extends AppCompatActivity {
               case R.id.quality:
                 AllData quality = new AllData();
                 setupRV(quality.quality(general));
-                Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT)
+                    .show();
                 return true;
             }
             return false;
@@ -193,12 +206,14 @@ public class home_screen_Activity extends AppCompatActivity {
     rv.setAdapter(adapter);
     rv.setLayoutManager(lm);
   }
-  public int listCountry(String country){
+
+  public int listCountry(String country) {
 
     whiteSea.add("Port Said Governorate");
     whiteSea.add("North Sinai Governorate");
     whiteSea.add("Dakahlia Governorate");
     whiteSea.add("Damietta Governorate");
+    whiteSea.add("El Beheira Governorate");
     whiteSea.add("Kafr El Sheikh Governorate");
     whiteSea.add("Alexandria Governorate");
     whiteSea.add("Matrouh Governorate");
@@ -219,7 +234,6 @@ public class home_screen_Activity extends AppCompatActivity {
     nile.add("Faiyum Governorate");
     nile.add("Ash Sharqia Governorate");
     nile.add("Cairo Governorate");
-    nile.add("El Beheira Governorate");
     nile.add("Giza Governorate");
     nile.add("Al Qalyubia Governorate");
     nile.add("Menofia Governorate");
@@ -256,5 +270,8 @@ public class home_screen_Activity extends AppCompatActivity {
     return general;
   }
 
-
+  public Bitmap convertStringToBitmap(String encodedImage) {
+    byte[] decodedBytes = Base64.decode(encodedImage, Base64.DEFAULT);
+    return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+  }
 }
