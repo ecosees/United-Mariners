@@ -41,8 +41,13 @@
     <string name="change">Change</string>
     <string name="delete">Delete</string>
     <string name="save">Save</string>
-
-
+    <string name="game_name">Ecoseas game</string>
+    <string name="level1">Level 1</string>
+    <string name="level2">Level 2</string>
+    <string name="level3">Level 3</string>
+    <string name="level4">Level 4</string>
+    <string name="name_of_animal">The name of this animal is...</string>
+    <string name="try_again">Try again</string>
 
 
     //AllData
@@ -105,14 +110,6 @@
     <string name="Caribbean">The Caribbean monk seal, also known as the West Indian seal or sea wolf, was a species of seal native to the Caribbean which is now believed to be extinct. The main predators of Caribbean monk seals were sharks and humans.</string>
     <string name="Fin_Whale">The fin whale, also known as finback whale or common rorqual and formerly known as herring whale or razorback whale, is a cetacean belonging to the parvorder of baleen whales. It is the second-longest species of cetacean on Earth after the blue whale.</string>
     <string name="Hectors_Dolphin">Hectors dolphin is one of four dolphin species belonging to the genus Cephalorhynchus. Hectors dolphin is the only cetacean endemic to New Zealand, and comprises two subspecies: C. h. hectori</string>
-
-
-
-
-
-
-
-
 
 
 </resources>

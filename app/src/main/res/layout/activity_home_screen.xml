@@ -26,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/photo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/user_photo"
                 android:layout_marginLeft="10dp" />
 
@@ -125,6 +125,8 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
+              android:layout_marginRight="4dp"
+              android:layout_marginLeft="4dp"
               android:src="@drawable/right_alt32"
               />
           <TextView
@@ -135,12 +137,7 @@
               android:layout_gravity="center"
               android:textColor="@color/blueDark"
               android:text="mansours"/>
-          <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:src="@drawable/right_alt32"
-              />
+      </LinearLayout>
           <TextView
               android:id="@+id/txtThirdSrc"
               android:layout_width="wrap_content"
@@ -150,7 +147,7 @@
               android:textColor="@color/blueDark"
               android:text="mansours"/>
 
-      </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
@@ -179,63 +176,5 @@
         app:itemTextColor="@color/blueDark"
         app:menu="@menu/bottom_navigation_home" />
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:gravity="center">-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/home"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/home"-->
-<!--            android:layout_margin="30dp"-->
-
-<!--            />-->
-
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/group"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/group"-->
-<!--            android:layout_margin="30dp"-->
-<!--            />-->
-
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/game"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/cup"-->
-
-<!--            android:layout_margin="30dp"-->
-
-<!--            />-->
-
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/search"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/search"-->
-<!--            android:layout_margin="30dp"-->
-
-
-<!--            />-->
-
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/user_profile"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/user_profile"-->
-<!--            android:layout_margin="30dp"-->
-
-<!--            />-->
-
-<!--    </LinearLayout>-->
 
 </RelativeLayout>

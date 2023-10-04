@@ -71,9 +71,7 @@ public class AllData {
       //red +white +nile
     }
     return allDataArray;
-  }
-
-  public ArrayList<DataHome> swimming() {
+  }public ArrayList<DataHome> swimming() {
     ArrayList<DataHome> allDataArray = new ArrayList<>();
     allDataArray.add(new DataHome(R.drawable.swimming, "First Advice", R.string.First_Advice));
     allDataArray.add(new DataHome(R.drawable.suncream, "Second Advice", R.string.Second_Advice));
