@@ -36,6 +36,14 @@
 
     <string name="join_our_community">Join Our Community</string>
     <string name="join_group">Join group</string>
+    <string name="tv_edit_name">Edit your name</string>
+    <string name="change">Change</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+
+
+
+
     //AllData
     <string name="European_Eel">The European Eel is also considered endangered. Overfishing, habitat degradation, and barriers to migration are some of the challenges it faces.</string>
     <string name="Mediterranean">This mammal is listed as endangered. Factors like habitat disturbance, pollution, and human activities pose significant threats to its survival</string>
