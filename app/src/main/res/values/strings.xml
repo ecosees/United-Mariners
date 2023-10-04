@@ -37,6 +37,14 @@
 
     <string name="join_our_community">Join Our Community</string>
     <string name="join_group">Join group</string>
+    <string name="tv_edit_name">Edit your name</string>
+    <string name="change">Change</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+
+
+
+
     //AllData
     //The Mediterranean Sea
     <string name="Sea_Turtle">Despite the fact that sea turtles have been living on earth for 200 million years, witnessed the extinction of many animals, and seemed tolerant and adaptable to extreme climate changes, only recently a huge decline in their numbers and gatherings has been noticed around the globe due to one main weak point they have: nesting on sandy beaches.</string>
