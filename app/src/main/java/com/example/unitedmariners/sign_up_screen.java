@@ -1,8 +1,10 @@
 package com.example.unitedmariners;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,21 +23,10 @@ import com.google.firebase.auth.FirebaseUser;
 public class sign_up_screen extends AppCompatActivity {
   EditText et_user_name, s_et_email, s_et_password, et_verify_password;
   TextView s_tv_login;
-    String name;
+  String name;
   Button btn_signup, s_btn_login;
   String email, password;
   FirebaseAuth mAuth;
-
-//  @Override
-//  public void onStart() {
-//    super.onStart();
-//    FirebaseUser currentUser = mAuth.getCurrentUser();
-//    if (currentUser != null) {
-//      Intent intent = new Intent(sign_up_screen.this, MapsActivity.class);
-//      startActivity(intent);
-//      finish();
-//    }
-//  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +39,7 @@ public class sign_up_screen extends AppCompatActivity {
     et_verify_password = findViewById(R.id.et_verify_password);
     btn_signup = findViewById(R.id.btn_signup);
     s_tv_login = findViewById(R.id.s_tv_login);
-    name = String.valueOf(et_user_name);
+
     s_tv_login.setOnClickListener(
         new View.OnClickListener() {
           @Override
@@ -63,8 +54,9 @@ public class sign_up_screen extends AppCompatActivity {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-
             auth();
+            name = et_user_name.getText().toString();
+            String email = String.valueOf(s_et_email);
           }
         });
   }
@@ -94,7 +86,7 @@ public class sign_up_screen extends AppCompatActivity {
                 if (task.isSuccessful()) {
                   Toast.makeText(sign_up_screen.this, "Account Created", Toast.LENGTH_SHORT).show();
                   Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-                  intent.putExtra("key",name);
+                  intent.putExtra("key", name);
                   startActivity(intent);
                   finish();
 
