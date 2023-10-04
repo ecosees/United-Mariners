@@ -47,7 +47,6 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
             intent.putExtra("key_message2", city);
             intent.putExtra("key_message3", state);
             intent.putExtra("key_message4", country);
-            intent.putExtra("key_message5", userName);
             startActivity(intent);
           }
         });

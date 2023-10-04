@@ -1,5 +1,6 @@
 package com.example.unitedmariners;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -54,9 +55,13 @@ public class sign_up_screen extends AppCompatActivity {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            auth();
             name = et_user_name.getText().toString();
-            String email = String.valueOf(s_et_email);
+            SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("userName", name);
+            editor.apply();
+            auth();
+
           }
         });
   }

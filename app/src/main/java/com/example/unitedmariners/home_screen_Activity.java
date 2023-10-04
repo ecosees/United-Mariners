@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -47,16 +47,26 @@ public class home_screen_Activity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home_screen);
+    txtName=findViewById(R.id.tv_name);
+    SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+    String userName = sharedPreferences.getString("userName", "None");
+    if (txtName != null) {
+      txtName.setText(userName);
+    }
     photo = findViewById(R.id.photo);
     fragmentShow();
     rv = findViewById(R.id.rv_home);
-    txtName=findViewById(R.id.tv_name);
+    srcFirst=findViewById(R.id.txtFirstSrc);
+    srcSecond=findViewById(R.id.txtSecondSrc);
+    srcThird=findViewById(R.id.txtThirdSrc);
+
+    srcFirst=findViewById(R.id.txtFirstSrc);
     menu_btn = findViewById(R.id.btn_menu);
     menu_btn.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            showMenu(view); // Call the showMenu method when the ImageButton is clicked.
+            showMenu(view);
           }
         });
     Intent intent = getIntent();
@@ -65,6 +75,8 @@ public class home_screen_Activity extends AppCompatActivity {
     country = intent.getStringExtra("key_message3");
     state = intent.getStringExtra("key_message4");
     listCountry(country);
+    AllData all = new AllData();
+    setupRV(all.all(general));
   }
 
   public void fragmentShow() {
@@ -133,34 +145,34 @@ public class home_screen_Activity extends AppCompatActivity {
             switch (item.getItemId()) {
               case R.id.all:
                 AllData all = new AllData();
-                setupArraylist(all.all(general));
+                setupRV(all.all(general));
                 Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.Endangered:
                 AllData Endangered = new AllData();
-                setupArraylist(Endangered.endangered(general));
+                setupRV(Endangered.endangered(general));
                 Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.swimming:
                 AllData swimming = new AllData();
-                setupArraylist(swimming.swimming());
+                setupRV(swimming.swimming());
                 Toast.makeText(getApplicationContext(), "swimming", Toast.LENGTH_SHORT).show();
                 return true;
 
               case R.id.nearest_Places:
                 AllData nearest_Places = new AllData();
-                setupArraylist(nearest_Places.nearest_Places(general));
+                setupRV(nearest_Places.nearest_Places(general));
                 Toast.makeText(getApplicationContext(), "nearest_Places", Toast.LENGTH_SHORT)
                     .show();
                 return true;
               case R.id.aroundWorld:
                 AllData aroundWorld = new AllData();
-                setupArraylist(aroundWorld.around_world());
+                setupRV(aroundWorld.around_world());
                 Toast.makeText(getApplicationContext(), "around_world", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.quality:
                 AllData quality = new AllData();
-                setupArraylist(quality.quality(general));
+                setupRV(quality.quality(general));
                 Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -171,7 +183,8 @@ public class home_screen_Activity extends AppCompatActivity {
     popup.show();
   }
 
-  public void setupArraylist(ArrayList<DataHome> setData) {
+  public void setupRV(ArrayList<DataHome> setData) {
+
     ArrayList<DataHome> showData = new ArrayList<>();
     showData = setData;
     AdapterHomeInformation adapter = new AdapterHomeInformation(showData);
@@ -215,18 +228,27 @@ public class home_screen_Activity extends AppCompatActivity {
     for (String text : redSea) {
       if (text.equalsIgnoreCase(country)) {
         general = 0;
+        srcFirst.setText("Indian Ocean");
+        srcSecond.setText("Red Sea");
+        srcThird.setText(country);
         break;
       }
     }
     for (String text : whiteSea) {
       if (text.equalsIgnoreCase(country)) {
         general = 1;
+        srcFirst.setText("Atlantic Ocean");
+        srcSecond.setText("The Mediterranean Sea");
+        srcThird.setText(country);
         break;
       }
     }
     for (String text : nile) {
       if (text.equalsIgnoreCase(country)) {
         general = 2;
+        srcFirst.setText("Lake Ethiopia");
+        srcSecond.setText("Nile River");
+        srcThird.setText(country);
         break;
       }
     }
