@@ -55,6 +55,7 @@
             android:weightSum="2">
 
             <LinearLayout
+                android:id="@+id/linear1"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginEnd="@dimen/margin_start_end"
@@ -62,7 +63,6 @@
                 android:background="@drawable/photo_level1">
 
                 <TextView
-                    android:id="@+id/tv_level1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/levels_background"
@@ -77,6 +77,7 @@
 
 
             <LinearLayout
+                android:id="@+id/linear2"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="@dimen/margin_start_end"
@@ -84,7 +85,6 @@
                 android:background="@drawable/photo_level2">
 
                 <TextView
-                    android:id="@+id/tv_level2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -110,6 +110,7 @@
 
 
             <LinearLayout
+                android:id="@+id/linear3"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginEnd="@dimen/margin_start_end"
@@ -117,7 +118,6 @@
                 android:background="@drawable/photo_level3">
 
                 <TextView
-                    android:id="@+id/tv_level3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -134,6 +134,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linear4"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="@dimen/margin_start_end"
@@ -141,7 +142,6 @@
                 android:background="@drawable/photo_level4">
 
                 <TextView
-                    android:id="@+id/tv_level4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

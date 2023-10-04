@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/level1"
+            tools:text="@string/level1"
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size_big"
             android:textStyle="bold" />
@@ -41,7 +41,8 @@
             android:layout_gravity="center"
             android:textColor="@color/red"
             android:textSize="@dimen/text_size_small"
-            tools:text="@string/try_again" />
+            android:visibility="invisible"
+            android:text="@string/try_again" />
 
         <RelativeLayout
             android:layout_width="match_parent"
