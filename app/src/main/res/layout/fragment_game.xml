@@ -1,14 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_game"
     tools:context=".GameFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="game" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/game_name"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/game_stars"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableEnd="@drawable/star"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_big"
+                tools:text="0" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="@dimen/margin_start_end"
+                android:layout_weight="1"
+                android:background="@drawable/photo_level1">
+
+                <TextView
+                    android:id="@+id/tv_level1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/levels_background"
+                    android:drawableStart="@drawable/lock"
+                    android:gravity="center"
+                    android:text="@string/level1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_big" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/margin_start_end"
+                android:layout_weight="1"
+                android:background="@drawable/photo_level2">
+
+                <TextView
+                    android:id="@+id/tv_level2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/levels_background"
+                    android:drawableLeft="@drawable/lock"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:gravity="center"
+                    android:text="@string/level2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_big" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="@dimen/margin_start_end"
+                android:layout_weight="1"
+                android:background="@drawable/photo_level3">
+
+                <TextView
+                    android:id="@+id/tv_level3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/levels_background"
+                    android:drawableStart="@drawable/lock"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:layout_margin="-20dp"
+                    android:gravity="center"
+                    android:text="@string/level3"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_big" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/margin_start_end"
+                android:layout_weight="1"
+                android:background="@drawable/photo_level4">
+
+                <TextView
+                    android:id="@+id/tv_level4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/levels_background"
+                    android:drawableStart="@drawable/lock"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:gravity="center"
+                    android:text="@string/level4"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_big" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

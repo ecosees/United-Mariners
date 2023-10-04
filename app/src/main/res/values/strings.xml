@@ -20,7 +20,7 @@
     <string name="already_have_account">Already have account?</string>
     <string name="email_password_wrong">Email or Password are wrong, please enter them again</string>
     <string name="title_activity_maps">MapsActivity</string>
-        <string name="water">Water Of Source</string>
+    <string name="water">Water Of Source</string>
     <string name="welcomex">welcome</string>
     <string name="name">John smith</string>
     <string name="search_hint">Search</string>
@@ -41,8 +41,13 @@
     <string name="change">Change</string>
     <string name="delete">Delete</string>
     <string name="save">Save</string>
-
-
+    <string name="game_name">Ecoseas game</string>
+    <string name="level1">Level 1</string>
+    <string name="level2">Level 2</string>
+    <string name="level3">Level 3</string>
+    <string name="level4">Level 4</string>
+    <string name="name_of_animal">The name of this animal is...</string>
+    <string name="try_again">Try again</string>
 
 
     //AllData
@@ -71,14 +76,6 @@
     <string name="The_Nile_Rive">Nile pollution is one of the most serious issues hindering Egypts development. According to recent studies conducted by the Egyptian Environmental Affairs Agency, the Nile River and its branches in the governorates suffer from a severe pollution problem, as approximately 4 billion cubic meters annually of agricultural and industrial waste containing acids, organic materials, pesticides, agricultural pesticides, and heavy metals are discharged into bodies of water</string>
     <string name="The_Atlantic_ocean">The discovered area contains at least 2,800 cubic kilometers (about 739 trillion gallons) of water, which is enough to fill 1.1 billion Olympic-size swimming pools, according to the American CNN network.</string>
     <string name="Indian_Ocean">cubic and covers an area of ​​about 73,556,000 square kilometers including the Red Sea and the Arabian Gulf. The northern point of the ocean is 30⁰ north of the equator in the Arabian Gulf. The ocean is more than 10,000 kilometers wide between the southern tip of Africa and Australia. It is found in the ocean with a large number of islands demarcating the continental margins. The major island nations in the Indian Ocean include Madagascar, Sri Lanka, Bahrain, Maldives, Mauritius, Seychelles, and the Indonesian archipelago. The average depth of the ocean is 3960 metres, and at the deepest point; Deep Sunda Dry Trench, 7450 meters deep</string>
-
-
-
-
-
-
-
-
 
 
 </resources>
