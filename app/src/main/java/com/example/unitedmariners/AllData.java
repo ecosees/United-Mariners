@@ -16,7 +16,7 @@ public class AllData {
     } else if (general == 1) { // The Mediterranean Sea
       allDataArray.add(
           new DataHome(R.drawable.european, "European", R.string.European_Eel));
-      allDataArray.add(new DataHome(R.drawable.mediterranean, "Mediterranean Monk Seal", R.string.Mediterranean));
+      allDataArray.add(new DataHome(R.drawable.mediterraneansee, "Mediterranean Monk Seal", R.string.Mediterranean));
       allDataArray.add(new DataHome(R.drawable.sturgeon, "Russian Sturgeon", R.string.Sturgeon));
     } else if (general == 2) { // nile
       allDataArray.add(
@@ -54,7 +54,7 @@ public class AllData {
 
   public ArrayList<DataHome> quality() {
     ArrayList<DataHome> allDataArray = new ArrayList<>();
-    allDataArray.add(new DataHome(R.drawable.mediterranean, "Mediterranean", R.string.The_Mediterranean_Sea));
+    allDataArray.add(new DataHome(R.drawable.mediterraneansee, "Mediterranean", R.string.The_Mediterranean_Sea));
     allDataArray.add(new DataHome(R.drawable.redsea, "Red Sea", R.string.The_Red_Sea));
     allDataArray.add(new DataHome(R.drawable.nile_river, "Nile River", R.string.The_Nile_Rive));
     allDataArray.add(new DataHome(R.drawable.atlantic_ocean, "Nile River", R.string.The_Atlantic_ocean));

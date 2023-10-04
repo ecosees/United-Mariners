@@ -64,9 +64,7 @@ public class home_screen_Activity extends AppCompatActivity {
     country = intent.getStringExtra("key_message3");
     state = intent.getStringExtra("key_message4");
     userName = intent.getStringExtra("key_message5");
-    Log.d("mohamed", country);
     listCountry(country);
-    Log.d("mohamed", String.valueOf(general));
   }
 
   public void fragmentShow() {
