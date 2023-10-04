@@ -23,7 +23,6 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
 public class ProfileFragment extends Fragment {
 
     ImageView profile_photo;
@@ -96,16 +95,17 @@ public class ProfileFragment extends Fragment {
                 requireActivity().finish();
 
             }
+
         });
 
-        add_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), sign_up_screen.class);
-                startActivity(intent);
-                requireActivity().finish();
-
-            }
+    add_account.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            Intent intent = new Intent(getActivity(), sign_up_screen.class);
+            startActivity(intent);
+            requireActivity().finish();
+          }
         });
 
 

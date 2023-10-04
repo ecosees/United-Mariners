@@ -52,6 +52,7 @@ public class login_screen extends AppCompatActivity {
       public void onClick(View view) {
         Intent intent = new Intent(getApplicationContext(), sign_up_screen.class);
         startActivity(intent);
+        finish();
       }
     });
 
