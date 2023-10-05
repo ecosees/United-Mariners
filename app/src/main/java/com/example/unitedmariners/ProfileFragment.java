@@ -237,6 +237,7 @@ public class ProfileFragment extends Fragment {
             SharedPreferences.Editor editor = sh.edit();
             editor.putString("img",sImg);
             editor.apply();
+
         }
     }
 
