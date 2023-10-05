@@ -1,5 +1,7 @@
 package com.example.unitedmariners;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -48,21 +50,21 @@ public class GameFragment2 extends Fragment {
         tv_animal4.setText(answer4);
         if (type == 1)       //level 1
         {
-            animal_photo.setImageResource(R.drawable.mediterraneansea);
+            animal_photo.setImageResource(R.drawable.european);
             level.setText("Level 1");
 
         } else if (type == 2)  //level 2
         {
-            animal_photo.setImageResource(R.drawable.atlantic_ocean);
+            animal_photo.setImageResource(R.drawable.sturgeon);
             level.setText("Level 2");
 
         } else if (type == 3)  //level 3
         {
-            animal_photo.setImageResource(R.drawable.lion_fish);
+            animal_photo.setImageResource(R.drawable.dugong);
             level.setText("Level 3");
         } else if (type == 4)  //level 4
         {
-            animal_photo.setImageResource(R.drawable.manatee);
+            animal_photo.setImageResource(R.drawable.seaturtle);
             level.setText("Level 4");
         }
 
@@ -73,6 +75,9 @@ public class GameFragment2 extends Fragment {
                 Navigation.findNavController(v).navigateUp();
             }
         });
+
+        SharedPreferences gameShared =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
 
 
         tv_animal1.setOnClickListener(new View.OnClickListener() {
@@ -86,10 +91,16 @@ public class GameFragment2 extends Fragment {
                     try_again.setVisibility(View.VISIBLE);
                     try_again.setText("Congratulation .. ");
                     try_again.setTextColor(Color.GREEN);
+
+                    //store pass at shared
+                    SharedPreferences.Editor editor = gameShared.edit();
+                    editor.putBoolean("level3",true);
+                    editor.apply();
+
+
                 } else if (type == 4)
                     try_again.setVisibility(View.VISIBLE);
 
-                Log.d("suzan", String.valueOf(type));
 
             }
         });
@@ -107,9 +118,13 @@ public class GameFragment2 extends Fragment {
                     try_again.setVisibility(View.VISIBLE);
                     try_again.setText("Congratulation .. ");
                     try_again.setTextColor(Color.GREEN);
-                }
 
-                Log.d("suzan", String.valueOf(type));
+                    //store pass at shared
+                    SharedPreferences.Editor editor = gameShared.edit();
+                    editor.putBoolean("level4",true);
+                    editor.apply();
+
+                }
 
             }
         });
@@ -121,6 +136,12 @@ public class GameFragment2 extends Fragment {
                     try_again.setVisibility(View.VISIBLE);
                     try_again.setText("Congratulation .. ");
                     try_again.setTextColor(Color.GREEN);
+
+                    //store pass at shared
+                    SharedPreferences.Editor editor = gameShared.edit();
+                    editor.putBoolean("level1",true);
+                    editor.apply();
+
                 } else if (type == 2)
                     try_again.setVisibility(View.VISIBLE);
                 else if (type == 3)
@@ -128,7 +149,6 @@ public class GameFragment2 extends Fragment {
                 else if (type == 4)
                     try_again.setVisibility(View.VISIBLE);
 
-                Log.d("suzan", String.valueOf(type));
 
             }
         });
@@ -142,13 +162,17 @@ public class GameFragment2 extends Fragment {
                     try_again.setVisibility(View.VISIBLE);
                     try_again.setText("Congratulation .. ");
                     try_again.setTextColor(Color.GREEN);
+
+                    //store pass at shared
+                    SharedPreferences.Editor editor = gameShared.edit();
+                    editor.putBoolean("level2",true);
+                    editor.apply();
+
                 } else if (type == 3)
                     try_again.setVisibility(View.VISIBLE);
 
                 else if (type == 4)
                     try_again.setVisibility(View.VISIBLE);
-
-                Log.d("suzan", String.valueOf(type));
 
             }
         });
