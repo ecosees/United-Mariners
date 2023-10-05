@@ -63,6 +63,7 @@ public class MapsActivity extends AppCompatActivity implements MapsFragment.data
       state = addresses.get(0).getAdminArea();
       country = addresses.get(0).getCountryName();
       et_location.setText(address);
+
     } catch (IOException e) {
       e.printStackTrace();
     } catch (IndexOutOfBoundsException e) {
