@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".resourcesFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Endangered"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/text_size_big"
+        />
+    <TextView
+        android:id="@+id/btn_linkE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blueDark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:text="https://www.nationalgeographic.com/"
+        android:textSize="@dimen/text_size_small"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nearest Places"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/text_size_big"
+        />
+    <TextView
+        android:id="@+id/btn_linkP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blueDark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:text="https://a-z-animals.com/"
+        android:textSize="@dimen/text_size_small"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quality of Water"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/text_size_big"
+        />
+    <TextView
+        android:id="@+id/btn_linkQ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blueDark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:text="https://water.fanack.com/egypt/"
+        android:textSize="@dimen/text_size_small"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Water Source"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/text_size_big"
+        />
+    <TextView
+        android:id="@+id/btn_linkW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blueDark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:text="https://www.sciencedirect.com/science/"
+        android:textSize="@dimen/text_size_small"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Swimming"
+        android:textColor="@color/blueDark"
+        android:layout_marginTop="28dp"
+        android:textSize="@dimen/text_size_big"
+        />
+    <TextView
+        android:id="@+id/btn_linkS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blueDark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:text="https://swim-west.com/10-swimming-save/"
+        android:textSize="@dimen/text_size_small"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Around World"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/blueDark"
+        android:textSize="@dimen/text_size_big"
+        />
+    <TextView
+        android:id="@+id/btn_linkA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blueDark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:text="https://www.ifaw.org/international/journal/world-most-endangered-animals "
+        android:textSize="@dimen/text_size_small"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
