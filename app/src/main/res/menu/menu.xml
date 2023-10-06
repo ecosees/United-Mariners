@@ -15,4 +15,7 @@
      android:title="Swimming"/>
     <item android:id="@+id/aroundWorld"
      android:title="Around World"/>
+    <item android:id="@+id/resources"
+        android:title="Resources"/>
+
 </menu>

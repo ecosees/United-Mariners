@@ -23,8 +23,8 @@ Button join ;
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(telegramUrl));
-                startActivity(intent);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(telegramUrl));
+                    startActivity(intent);
             }
         });
 

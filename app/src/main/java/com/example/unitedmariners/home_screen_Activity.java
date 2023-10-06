@@ -2,6 +2,7 @@ package com.example.unitedmariners;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,8 +27,6 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class home_screen_Activity extends AppCompatActivity {
@@ -47,6 +46,7 @@ public class home_screen_Activity extends AppCompatActivity {
   SearchFragment searchFragment = new SearchFragment();
   CommunityFragment communityFragment = new CommunityFragment();
   ProfileFragment profileFragment = new ProfileFragment();
+  resourcesFragment resourcesFrag = new resourcesFragment();
   BaseGameFragment baseGameFragment = new BaseGameFragment();
 
   @Override
@@ -124,7 +124,6 @@ public class home_screen_Activity extends AppCompatActivity {
                     .replace(R.id.container, baseGameFragment)
                     .commit();
                 return true;
-
               case R.id.home:
                 getSupportFragmentManager().beginTransaction().remove(baseGameFragment).commit();
                 getSupportFragmentManager().beginTransaction().remove(profileFragment).commit();
@@ -163,30 +162,42 @@ public class home_screen_Activity extends AppCompatActivity {
               case R.id.Endangered:
                 AllData Endangered = new AllData();
                 setupRV(Endangered.endangered(general));
-                Toast.makeText(getApplicationContext(), "All", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Endangered", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.swimming:
                 AllData swimming = new AllData();
                 setupRV(swimming.swimming());
-                Toast.makeText(getApplicationContext(), "swimming", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Swimming", Toast.LENGTH_SHORT).show();
                 return true;
 
               case R.id.nearest_Places:
                 AllData nearest_Places = new AllData();
                 setupRV(nearest_Places.nearest_Places(general));
-                Toast.makeText(getApplicationContext(), "nearest_Places", Toast.LENGTH_SHORT)
+                Toast.makeText(getApplicationContext(), "Nearest Places", Toast.LENGTH_SHORT)
                     .show();
                 return true;
               case R.id.aroundWorld:
                 AllData aroundWorld = new AllData();
                 setupRV(aroundWorld.around_world());
-                Toast.makeText(getApplicationContext(), "around_world", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Around World", Toast.LENGTH_SHORT).show();
                 return true;
               case R.id.quality:
                 AllData quality = new AllData();
                 setupRV(quality.quality(general));
                 Toast.makeText(getApplicationContext(), "Quality of water", Toast.LENGTH_SHORT)
                     .show();
+                return true;
+              case R.id.resources:
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.container, resourcesFrag);
+
+                transaction.addToBackStack(null);
+
+                transaction.commit();
+                Toast.makeText(getApplicationContext(), "Resources", Toast.LENGTH_SHORT);
+
+
                 return true;
             }
             return false;

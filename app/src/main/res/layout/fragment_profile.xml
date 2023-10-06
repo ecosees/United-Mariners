@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".ProfileFragment">
 
@@ -31,11 +32,23 @@
                 android:background="@drawable/photo_background"
                 >
 
-                <ImageView
-                    android:id="@+id/profile_photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/user_profile_photo" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/img_photo"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="70dp"
+                    android:background="@drawable/photo_background"
+                    >
+
+                    <ImageView
+                        android:id="@+id/profile_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/user_photo"
+                        />
+
+
+                </androidx.cardview.widget.CardView>
             </RelativeLayout>
 
 
