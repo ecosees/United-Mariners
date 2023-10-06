@@ -61,14 +61,14 @@ public class MapsFragment extends Fragment {
     != PackageManager.PERMISSION_GRANTED) */
 
     Log.d(
-        "suzan",
+        "moh",
         String.valueOf(
             ActivityCompat.checkSelfPermission(
                     getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED));
 
     Log.d(
-        "suzan",
+        "moh",
         String.valueOf(
             ActivityCompat.checkSelfPermission(
                     getContext(), Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -82,7 +82,7 @@ public class MapsFragment extends Fragment {
               new OnSuccessListener<Location>() {
                 @Override
                 public void onSuccess(Location location) {
-                  Log.d("suzan", location.toString());
+
                   if (location != null) {
                     latitude = location.getLatitude();
                     longitude = location.getLongitude();
@@ -95,7 +95,7 @@ public class MapsFragment extends Fragment {
               new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                  Log.d("suzan" , e.toString());
+
                 }
               });
       ;
@@ -103,7 +103,7 @@ public class MapsFragment extends Fragment {
 
       ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1542);
 
-      Log.d("suzan", "Failed");
+
     }
   }
 
@@ -111,7 +111,7 @@ public class MapsFragment extends Fragment {
   @Override
   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    Log.d("suzan" , "return request");
+
 
     if (requestCode == 1542) {
       if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -119,7 +119,7 @@ public class MapsFragment extends Fragment {
         getLastLocation();
       } else {
         // Permission denied, handle it accordingly (e.g., show a message or disable location features)
-        Log.d("suzan" , "Failed from permission function");
+
       }
     }
   }
