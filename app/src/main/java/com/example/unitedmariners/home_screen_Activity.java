@@ -26,10 +26,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
-public class home_screen_Activity extends AppCompatActivity {
+public class home_screen_Activity extends AppCompatActivity implements ProfileFragment.Instance {
   RecyclerView rv;
   ImageButton menu_btn;
   String location, city, country, state, userName;
@@ -48,21 +50,32 @@ public class home_screen_Activity extends AppCompatActivity {
   ProfileFragment profileFragment = new ProfileFragment();
   resourcesFragment resourcesFrag = new resourcesFragment();
   BaseGameFragment baseGameFragment = new BaseGameFragment();
+  FirebaseAuth auth;
+  SharedPreferences sh;
+  FirebaseUser user;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home_screen);
     txtName = findViewById(R.id.tv_name);
-    SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-    String userName = sharedPreferences.getString("userName", "None");
-    if (txtName != null) {
+
+    auth = FirebaseAuth.getInstance();
+    user = auth.getCurrentUser();
+    if (user == null) {
+      Intent intent = new Intent(this, login_screen.class);
+      startActivity(intent);
+    } else {
+      String email =user.getEmail();
+      sh= getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+      String userName = sh.getString(email, "User Name");
       txtName.setText(userName);
     }
+
     photo = findViewById(R.id.photo);
     SharedPreferences sh = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-    if (sharedPreferences.getString("img", "") != "") {
-      Bitmap bitmap = convertStringToBitmap(sharedPreferences.getString("img", ""));
+    if (sh.getString("img", "") != "") {
+      Bitmap bitmap = convertStringToBitmap(sh.getString("img", ""));
       if (bitmap != null) Log.d("suzan", bitmap.toString());
       photo.setImageBitmap(bitmap);
     }
@@ -284,5 +297,14 @@ public class home_screen_Activity extends AppCompatActivity {
   public Bitmap convertStringToBitmap(String encodedImage) {
     byte[] decodedBytes = Base64.decode(encodedImage, Base64.DEFAULT);
     return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+  }
+
+
+  @Override
+  public void uploadImage(String img) {
+    Bitmap bitmap =convertStringToBitmap(img);
+    if (bitmap!=null){
+      photo.setImageBitmap(bitmap);
+    }
   }
 }

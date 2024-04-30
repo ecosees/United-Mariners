@@ -55,12 +55,25 @@ public class sign_up_screen extends AppCompatActivity {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            name = et_user_name.getText().toString();
-            SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("userName", name);
-            editor.apply();
-            auth();
+            if(et_user_name.equals("")){
+              Toast.makeText(sign_up_screen.this, "Enter UserName", Toast.LENGTH_SHORT).show();
+            }else {
+              name = et_user_name.getText().toString();
+              SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+              SharedPreferences.Editor editor = sharedPreferences.edit();
+              email = String.valueOf(s_et_email.getText());
+
+              if (email.equals("")){
+
+                Toast.makeText(sign_up_screen.this, "Enter email", Toast.LENGTH_SHORT).show();
+              }else {
+                editor.putString(email, name);
+                editor.apply();
+                auth();
+              }
+
+            }
+
 
           }
         });

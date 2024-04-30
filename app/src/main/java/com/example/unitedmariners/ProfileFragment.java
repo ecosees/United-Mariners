@@ -3,6 +3,7 @@ package com.example.unitedmariners;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -23,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +48,23 @@ public class ProfileFragment extends Fragment {
     TextView user_name, email, logOut, emailTxt, change_location, add_account;
     FirebaseAuth auth;
     FirebaseUser user;
+    Instance uploadListener;
+    SharedPreferences sh;
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof Instance) {
+            uploadListener = (Instance) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement Instance");
+        }
+    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        uploadListener = null;
+    }
     public ProfileFragment() {
     }
 
@@ -61,13 +80,8 @@ public class ProfileFragment extends Fragment {
         profile_photo = v.findViewById(R.id.profile_photo);
         change_location = v.findViewById(R.id.change_location);
         add_account = v.findViewById(R.id.add_account);
-
-        SharedPreferences sh1 =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        profile_photo.setImageBitmap(convertStringToBitmap(sh1.getString("img" , "")));
-
-
-
-        /////////////////////////////////////////////////////////////////////////////
+        sh =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        profile_photo.setImageBitmap(convertStringToBitmap(sh.getString("img" , "")));
 
         user_name_edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,25 +160,29 @@ public class ProfileFragment extends Fragment {
 
     private void setPhotoDialog() {
         AlertDialog.Builder builder_photo = new AlertDialog.Builder(getActivity());
-
         View view_photo = getLayoutInflater().inflate(R.layout.profile_photo_layout, null);
         ImageButton im_back_photo;
         TextView tv_change, tv_delete;
-
         im_back_photo = view_photo.findViewById(R.id.im_back_photo);
         tv_change = view_photo.findViewById(R.id.tv_change);
         tv_delete = view_photo.findViewById(R.id.tv_delete);
         dialog_photo = view_photo.findViewById(R.id.dialog_photo);
+        dialog_photo.setImageBitmap(convertStringToBitmap(sh.getString("img" , "")));
+        builder_photo.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                profile_photo.setImageBitmap(convertStringToBitmap(sh.getString("img" , "")));
+            }
+        });
+
 
         tv_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create an intent to open the file picker
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1234);
-
 
             }
         });
@@ -194,7 +212,6 @@ public class ProfileFragment extends Fragment {
     private void setNameDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
         View view = getLayoutInflater().inflate(R.layout.name_dialog, null);
         ImageButton im_back;
         EditText et_name;
@@ -233,7 +250,7 @@ public class ProfileFragment extends Fragment {
             Uri selectedImageUri = data.getData();
             dialog_photo.setImageURI(selectedImageUri);
             imageRefactored(selectedImageUri);
-            SharedPreferences sh =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+             sh =requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sh.edit();
             editor.putString("img",sImg);
             editor.apply();
@@ -246,7 +263,8 @@ public class ProfileFragment extends Fragment {
         return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
     }
 
-    private void imageRefactored(Uri uri) {
+    private void imageRefactored(Uri uri)
+    {
         try {
             InputStream inputStream = requireContext().getContentResolver().openInputStream(uri);
             Bitmap myBitmap = BitmapFactory.decodeStream(inputStream);
@@ -256,7 +274,7 @@ public class ProfileFragment extends Fragment {
 
             byte[] byteArray = stream.toByteArray();
             sImg = Base64.encodeToString(byteArray, Base64.DEFAULT);
-
+            uploadListener.uploadImage(sImg);
             if (inputStream != null) {
                 inputStream.close();
             }
@@ -264,6 +282,10 @@ public class ProfileFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public interface Instance{
+        void uploadImage(String img);
     }
 
 
