@@ -43,10 +43,10 @@ public class login_screen extends AppCompatActivity {
     mAuth = FirebaseAuth.getInstance();
     et_email = findViewById(R.id.et_email);
     et_password = findViewById(R.id.et_password);
-   tv_forget_password = findViewById(R.id.tv_forget_password);
+    tv_forget_password = findViewById(R.id.tv_forget_password);
     btn_login = findViewById(R.id.btn_login);
     btn_create_an_account = findViewById(R.id.btn_create_an_account);
-    btn_google = findViewById(R.id.btn_google);
+//    btn_google = findViewById(R.id.btn_google);
   btn_create_an_account.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {

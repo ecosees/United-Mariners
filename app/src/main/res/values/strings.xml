@@ -1,5 +1,5 @@
 <resources>
-    <string name="google_maps_key">AIzaSyABsj5OVsiypRgec_FFyISUu7nhZTZhhmM</string>
+    <string name="google_maps_key">AIzaSyDXVJFixkh_Nn1LJJAsxbOksr3jmDjluh0</string>
     <string name="app_name">ECOSEES</string>
     <string name="login">Log in</string>
     <string name="sign_up">Sign Up</string>
@@ -34,6 +34,7 @@
     <string name="change_location">Change location</string>
     <string name="logout">logout</string>
     <string name="add_account"> Add account</string>
+    <string name="choose">Choose Type</string>
 
     <string name="join_our_community">Join Our Community</string>
     <string name="join_group">Join group</string>

@@ -116,10 +116,11 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <TextView
@@ -132,7 +133,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_create_an_account"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:text="@string/create_an_account"
                 android:textAllCaps="false"
@@ -143,29 +144,29 @@
         </LinearLayout>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/mar_rig_lift"
-            android:text="@string/or"
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/text_size_small" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="@dimen/mar_rig_lift"-->
+<!--            android:text="@string/or"-->
+<!--            android:textColor="@color/text_color"-->
+<!--            android:textSize="@dimen/text_size_small" />-->
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_google"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/mar_rig_lift"
-                android:layout_marginLeft="@dimen/mar_rig_lift"
-                android:layout_marginTop="@dimen/mar_rig_lift"
-                android:background="@drawable/edit_text"
-                android:drawableStart="@drawable/google"
-                android:text="@string/google"
-                android:textAllCaps="false"
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/btn_google"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="@dimen/mar_rig_lift"-->
+<!--                android:layout_marginLeft="@dimen/mar_rig_lift"-->
+<!--                android:layout_marginTop="@dimen/mar_rig_lift"-->
+<!--                android:background="@drawable/edit_text"-->
+<!--                android:drawableStart="@drawable/google"-->
+<!--                android:text="@string/google"-->
+<!--                android:textAllCaps="false"-->
 
-                android:textColor="@color/text_color"
-                android:textSize="18sp" />
+<!--                android:textColor="@color/text_color"-->
+<!--                android:textSize="18sp" />-->
 
     </LinearLayout>
 </RelativeLayout>

@@ -73,10 +73,11 @@ public class AllData {
     return allDataArray;
   }public ArrayList<DataHome> swimming() {
     ArrayList<DataHome> allDataArray = new ArrayList<>();
-    allDataArray.add(new DataHome(R.drawable.swimming, "First Advice", R.string.First_Advice));
-    allDataArray.add(new DataHome(R.drawable.suncream, "Second Advice", R.string.Second_Advice));
-    allDataArray.add(new DataHome(R.drawable.fishing, "Third Advice", R.string.Third_Advice));
-    allDataArray.add(new DataHome(R.drawable.aquatic, "Fourth Advice", R.string.Fourth_Advice));
+    allDataArray.add(new DataHome(R.drawable.suncream, "First Advice", R.string.Second_Advice));
+    allDataArray.add(new DataHome(R.drawable.fishing, "Second Advice", R.string.Third_Advice));
+    allDataArray.add(new DataHome(R.drawable.aquatic, "Third Advice", R.string.Fourth_Advice));
+    allDataArray.add(new DataHome(R.drawable.swimming, "Fourth Advice", R.string.First_Advice));
+
     allDataArray.add(new DataHome(R.drawable.hook, "Fifth Advice", R.string.Fifth_Advice));
     return allDataArray;
   }
@@ -138,6 +139,7 @@ public class AllData {
       allDataArray.add(new DataHome(R.drawable.sawfish, "Saw fish", R.string.Sawfish));
 
     }else if(general==1){ // The Mediterranean Sea
+
       new DataHome(R.drawable.european, "European", R.string.European_Eel);
       allDataArray.add(new DataHome(R.drawable.mediterraneansee, "Mediterranean Monk Seal", R.string.Mediterranean));
       allDataArray.add(new DataHome(R.drawable.sturgeon, "Russian Sturgeon", R.string.Sturgeon));
@@ -164,6 +166,46 @@ public class AllData {
       allDataArray.add(new DataHome(R.drawable.aquatic, "Fourth Advice", R.string.Fourth_Advice));
       allDataArray.add(new DataHome(R.drawable.hook, "Fifth Advice", R.string.Fifth_Advice));
       allDataArray.add(new DataHome(R.drawable.nile_river, "Nile River", R.string.The_Nile_Rive));
+
+    }else {
+      allDataArray.add(new DataHome(R.drawable.seaturtle, "Sea Turtle", R.string.Sea_Turtle));
+      allDataArray.add(new DataHome(R.drawable.dugong, "Dugong", R.string.Dugong));
+      allDataArray.add(new DataHome(R.drawable.whaleshark, "Whale Shark", R.string.Whale_Shark));
+      allDataArray.add(new DataHome(R.drawable.redsea, "Red Sea", R.string.Red_Sea));
+      allDataArray.add(new DataHome(R.drawable.gulfofsuez, "Gulf of Suez", R.string.Gulf_of_Suez));
+      allDataArray.add(new DataHome(R.drawable.wadi_elgemal_reserve, "Wadi El Gemal Reserve", R.string.Wadi_El_Gemal_Reserve));
+      allDataArray.add(new DataHome(R.drawable.swimming, "First Advice", R.string.First_Advice));
+      allDataArray.add(new DataHome(R.drawable.suncream, "Second Advice", R.string.Second_Advice));
+      allDataArray.add(new DataHome(R.drawable.fishing, "Third Advice", R.string.Third_Advice));
+      allDataArray.add(new DataHome(R.drawable.aquatic, "Fourth Advice", R.string.Fourth_Advice));
+      allDataArray.add(new DataHome(R.drawable.hook, "Fifth Advice", R.string.Fifth_Advice));
+      allDataArray.add(new DataHome(R.drawable.redsea, "Red Sea", R.string.The_Red_Sea));
+      allDataArray.add(new DataHome(R.drawable.sea_cucumber, "Sea Cucumber", R.string.Sea_Cucumber));
+      allDataArray.add(new DataHome(R.drawable.mangrove_tress, "Mangrove Tress", R.string.Mangrove_Tress));
+      allDataArray.add(new DataHome(R.drawable.manate, "Mante", R.string.Manate));
+      allDataArray.add(new DataHome(R.drawable.sawfish, "Saw fish", R.string.Sawfish));
+      allDataArray.add(new DataHome(R.drawable.native_fish, "Native Fish", R.string.Native_Fish));
+      allDataArray.add(new DataHome(R.drawable.dugong, "Dugong", R.string.Dugong));
+      allDataArray.add(new DataHome(R.drawable.hippopotamus, "Hippopotamus", R.string.Hippopotamus));
+      allDataArray.add(new DataHome(R.drawable.swimming, "First Advice", R.string.First_Advice));
+      allDataArray.add(new DataHome(R.drawable.suncream, "Second Advice", R.string.Second_Advice));
+      allDataArray.add(new DataHome(R.drawable.fishing, "Third Advice", R.string.Third_Advice));
+      allDataArray.add(new DataHome(R.drawable.aquatic, "Fourth Advice", R.string.Fourth_Advice));
+      allDataArray.add(new DataHome(R.drawable.hook, "Fifth Advice", R.string.Fifth_Advice));
+      allDataArray.add(new DataHome(R.drawable.nile_river, "Nile River", R.string.The_Nile_Rive));
+      new DataHome(R.drawable.european, "European", R.string.European_Eel);
+      allDataArray.add(new DataHome(R.drawable.mediterraneansee, "Mediterranean Monk Seal", R.string.Mediterranean));
+      allDataArray.add(new DataHome(R.drawable.sturgeon, "Russian Sturgeon", R.string.Sturgeon));
+      allDataArray.add(new DataHome(R.drawable.mediterraneansea, "Mediterranean Sea", R.string.Mediterranean_Sea));
+      allDataArray.add(new DataHome(R.drawable.swimming, "First Advice", R.string.First_Advice));
+      allDataArray.add(new DataHome(R.drawable.suncream, "Second Advice", R.string.Second_Advice));
+      allDataArray.add(new DataHome(R.drawable.fishing, "Third Advice", R.string.Third_Advice));
+      allDataArray.add(new DataHome(R.drawable.aquatic, "Fourth Advice", R.string.Fourth_Advice));
+      allDataArray.add(new DataHome(R.drawable.hook, "Fifth Advice", R.string.Fifth_Advice));
+      allDataArray.add(new DataHome(R.drawable.mediterraneansee, "Mediterranean", R.string.The_Mediterranean_Sea));
+      allDataArray.add(new DataHome(R.drawable.mantaray, "Manta Ray", R.string.Manta_Ray));
+      allDataArray.add(new DataHome(R.drawable.bluefin, "Blue Fin", R.string.Blue_Fin));
+
 
     }
 

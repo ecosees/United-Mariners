@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_text"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose"
+        android:textSize="28sp"
+        android:textColor="@color/blueDark"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mar_rig_lift"
+        android:layout_marginRight="@dimen/mar_rig_lift"
+        android:layout_marginTop="@dimen/mar_rig_lift"
+        android:background="@drawable/btn_login"
+        android:text="Child"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="28sp" />
+    <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/btn_fisherman"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/mar_rig_lift"
+    android:layout_marginRight="@dimen/mar_rig_lift"
+    android:layout_marginTop="@dimen/mar_rig_lift"
+    android:background="@drawable/btn_login"
+    android:text="Fisher Man"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    android:textSize="28sp" />
+    <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/btn_User"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/mar_rig_lift"
+    android:layout_marginRight="@dimen/mar_rig_lift"
+    android:layout_marginTop="@dimen/mar_rig_lift"
+    android:background="@drawable/btn_login"
+    android:text="User"
+    android:textAllCaps="false"
+        android:layout_marginBottom="20dp"
+    android:textColor="@color/white"
+    android:textSize="28sp" />
+
+</LinearLayout>

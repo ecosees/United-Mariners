@@ -1,6 +1,7 @@
 package com.example.unitedmariners;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,10 +16,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -41,6 +44,7 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
   TextView srcSecond;
   TextView srcThird;
   int general = -1;
+  AlertDialog dialog;
   ArrayList<String> redSea = new ArrayList<>();
   ArrayList<String> whiteSea = new ArrayList<>();
   ArrayList<String> nile = new ArrayList<>();
@@ -59,6 +63,27 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home_screen);
     txtName = findViewById(R.id.tv_name);
+    rv = findViewById(R.id.rv_home);
+    AllData all = new AllData();
+    setupRV(all.all(general));
+    sh= getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
+    String typeValue = sh.getString("type", "");
+    if (typeValue.equals("")){
+      showDialog(this);
+    } else if (typeValue.equals("1")) {
+      getSupportFragmentManager()
+              .beginTransaction()
+              .replace(R.id.container, baseGameFragment)
+              .commit();
+
+    } else if (typeValue.equals("2")) {
+      AllData swimming = new AllData();
+      setupRV(swimming.swimming());
+
+    } else if (typeValue.equals("3")) {
+          dialog.dismiss();
+    }
 
     auth = FirebaseAuth.getInstance();
     user = auth.getCurrentUser();
@@ -67,7 +92,6 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
       startActivity(intent);
     } else {
       String email =user.getEmail();
-      sh= getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
       String userName = sh.getString(email, "User Name");
       txtName.setText(userName);
     }
@@ -81,7 +105,6 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
     }
 
     fragmentShow();
-    rv = findViewById(R.id.rv_home);
     srcFirst = findViewById(R.id.txtFirstSrc);
     srcSecond = findViewById(R.id.txtSecondSrc);
     srcThird = findViewById(R.id.txtThirdSrc);
@@ -100,8 +123,7 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
     country = intent.getStringExtra("key_message3");
     state = intent.getStringExtra("key_message4");
     listCountry(country);
-    AllData all = new AllData();
-    setupRV(all.all(general));
+
   }
 
   public void fragmentShow() {
@@ -222,9 +244,9 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
 
   public void setupRV(ArrayList<DataHome> setData) {
 
-    ArrayList<DataHome> showData = new ArrayList<>();
-    showData = setData;
-    AdapterHomeInformation adapter = new AdapterHomeInformation(showData);
+//    ArrayList<DataHome> showData = new ArrayList<>();
+//    showData = setData;
+    AdapterHomeInformation adapter = new AdapterHomeInformation(setData);
     RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
     rv.setHasFixedSize(true);
     rv.setAdapter(adapter);
@@ -297,6 +319,58 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
   public Bitmap convertStringToBitmap(String encodedImage) {
     byte[] decodedBytes = Base64.decode(encodedImage, Base64.DEFAULT);
     return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+  }
+  public void showDialog(Context context) {
+    // Create a new AlertDialog builder
+    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+    // Get the layout inflater
+    LayoutInflater inflater = LayoutInflater.from(context);
+    View dialogView = inflater.inflate(R.layout.chosse_type, null);
+
+    builder.setView(dialogView);
+
+    Button child = dialogView.findViewById(R.id.btn_child);
+    Button fisherman = dialogView.findViewById(R.id.btn_fisherman);
+    Button user = dialogView.findViewById(R.id.btn_User);
+
+    // Create the AlertDialog
+     dialog = builder.create();
+    child.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        SharedPreferences.Editor editor = sh.edit();
+        editor.putString("type","1");
+        editor.apply();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, baseGameFragment)
+                .commit();
+
+        dialog.dismiss(); // Close the dialog
+      }
+    });
+    fisherman.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        SharedPreferences.Editor editor = sh.edit();
+        editor.putString("type","2");
+        editor.apply();
+        AllData swimming = new AllData();
+        setupRV(swimming.swimming());
+        dialog.dismiss(); // Close the dialog
+      }
+    });
+    user.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        SharedPreferences.Editor editor = sh.edit();
+        editor.putString("type","3");
+        editor.apply();
+        dialog.dismiss(); // Close the dialog
+      }
+    });
+
+    dialog.show();
   }
 
 
