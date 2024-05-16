@@ -139,6 +139,9 @@ public class MapsFragment extends Fragment {
           @Override
           public void onMapReady(@NonNull GoogleMap googleMap) {
 
+            LatLng egyptLatLng = new LatLng(26.8206, 30.8025); // Coordinates of Egypt
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(egyptLatLng, 5));
+
             googleMap.setOnMapClickListener(
                 new GoogleMap.OnMapClickListener() {
                   @Override

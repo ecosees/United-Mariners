@@ -20,8 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class login_screen extends AppCompatActivity {
   EditText et_email,et_password;
   TextView tv_forget_password;
-  Button btn_login,btn_create_an_account,btn_facebook,btn_google;
-
+  Button btn_login,btn_create_an_account;
   FirebaseAuth mAuth ;
 
   @Override
@@ -46,8 +45,7 @@ public class login_screen extends AppCompatActivity {
     tv_forget_password = findViewById(R.id.tv_forget_password);
     btn_login = findViewById(R.id.btn_login);
     btn_create_an_account = findViewById(R.id.btn_create_an_account);
-//    btn_google = findViewById(R.id.btn_google);
-  btn_create_an_account.setOnClickListener(new View.OnClickListener() {
+    btn_create_an_account.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         Intent intent = new Intent(getApplicationContext(), sign_up_screen.class);

@@ -90,7 +90,8 @@
               android:layout_height="wrap_content"
               android:background="@drawable/et_back_search"
               android:orientation="horizontal">
-              <EditText
+              <TextView
+                  android:id="@+id/et_search"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:background="@android:color/transparent"
@@ -99,46 +100,50 @@
           </LinearLayout>
 
       </androidx.cardview.widget.CardView>
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textSize="@dimen/text_size_big"
-          android:layout_marginLeft="@dimen/mar_rig_lift"
-          android:layout_marginTop="8dp"
-          android:textColor="@color/blueDark"
-          android:text="@string/water"/>
-
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:gravity="center"
-          android:layout_marginTop="8dp"
-          android:orientation="horizontal">
+          android:orientation="vertical"
+          android:visibility="visible">
           <TextView
-              android:id="@+id/txtFirstSrc"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:textSize="@dimen/text_size_small"
+              android:textSize="@dimen/text_size_big"
+              android:layout_marginLeft="@dimen/mar_rig_lift"
+              android:layout_marginTop="8dp"
               android:textColor="@color/blueDark"
-              tools:text="mansours"/>
-          <ImageView
-              android:layout_width="wrap_content"
+              android:text="@string/water"/>
+          <LinearLayout
+              android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:layout_marginRight="4dp"
-              android:layout_marginLeft="4dp"
-              android:src="@drawable/right_alt32"
-              />
-          <TextView
-              android:id="@+id/txtSecondSrc"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:textSize="@dimen/text_size_small"
-              android:layout_gravity="center"
-              android:textColor="@color/blueDark"
-              tools:text="mansours"/>
-      </LinearLayout>
+              android:gravity="center"
+              android:layout_marginTop="8dp"
+              android:orientation="horizontal">
+              <TextView
+                  android:id="@+id/txtFirstSrc"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:textSize="@dimen/text_size_small"
+                  android:textColor="@color/blueDark"
+                  tools:text="mansours"/>
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginRight="4dp"
+                  android:layout_marginLeft="4dp"
+                  android:src="@drawable/right_alt32"
+                  />
+              <TextView
+                  android:id="@+id/txtSecondSrc"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="@dimen/text_size_small"
+                  android:layout_gravity="center"
+                  android:textColor="@color/blueDark"
+                  tools:text="mansours"/>
+          </LinearLayout>
           <TextView
               android:id="@+id/txtThirdSrc"
               android:layout_width="wrap_content"
@@ -147,6 +152,8 @@
               android:layout_gravity="center"
               android:textColor="@color/blueDark"
               tools:text="mansours"/>
+      </LinearLayout>
+
 
 
 

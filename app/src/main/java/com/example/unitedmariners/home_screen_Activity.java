@@ -22,6 +22,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -39,7 +40,6 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
   ImageButton menu_btn;
   String location, city, country, state, userName;
   ImageView photo;
-
   TextView srcFirst, txtName;
   TextView srcSecond;
   TextView srcThird;
@@ -64,10 +64,19 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
     setContentView(R.layout.activity_home_screen);
     txtName = findViewById(R.id.tv_name);
     rv = findViewById(R.id.rv_home);
+     TextView et_search = findViewById(R.id.et_search);
+     et_search.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View view) {
+         String url = "https://www.google.com.eg/?hl=ar";
+         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+         startActivity(intent);
+
+       }
+     });
     AllData all = new AllData();
     setupRV(all.all(general));
     sh= getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-
     String typeValue = sh.getString("type", "");
     if (typeValue.equals("")){
       showDialog(this);
@@ -76,7 +85,6 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
               .beginTransaction()
               .replace(R.id.container, baseGameFragment)
               .commit();
-
     } else if (typeValue.equals("2")) {
       AllData swimming = new AllData();
       setupRV(swimming.swimming());
@@ -276,6 +284,7 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
     nile.add("Aswan Governorate");
     nile.add("Assiut Governorate");
     nile.add("Menia Governorate");
+    nile.add("Minya Governorate");
     nile.add("Beni Suef Governorate");
     nile.add("Faiyum Governorate");
     nile.add("Ash Sharqia Governorate");
@@ -284,7 +293,7 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
     nile.add("Al Qalyubia Governorate");
     nile.add("Menofia Governorate");
     nile.add("Gharbia Governorate");
-    nile.add("الدقهلية");
+    nile.add("Dakahlia Governorate");
     for (String text : redSea) {
       if (text.equalsIgnoreCase(country)) {
         general = 0;

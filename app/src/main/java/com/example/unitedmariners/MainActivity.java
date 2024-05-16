@@ -28,7 +28,7 @@ Button loginBtn,signUpBtn;
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), login_screen.class);
+                Intent intent=new Intent(MainActivity.this, login_screen.class);
                 startActivity(intent);
             }
         });
