@@ -90,7 +90,7 @@ public class home_screen_Activity extends AppCompatActivity implements ProfileFr
       setupRV(swimming.swimming());
 
     } else if (typeValue.equals("3")) {
-          dialog.dismiss();
+         // dialog.dismiss();
     }
 
     auth = FirebaseAuth.getInstance();

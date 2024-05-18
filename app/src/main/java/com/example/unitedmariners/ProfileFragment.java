@@ -224,6 +224,9 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 et_name.setText(user_name.getText().toString());
+                user_name.setText(et_name.getText().toString());
+                SharedPreferences.Editor editor = sh.edit();
+                editor.putString("userName",user_name.getText().toString());
                 dialog.dismiss();
             }
         });
@@ -285,7 +288,7 @@ public class ProfileFragment extends Fragment {
     }
 
     public interface Instance{
-        void uploadImage(String img);
+        void uploadImage(String img );
     }
 
 

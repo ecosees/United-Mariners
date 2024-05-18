@@ -57,7 +57,8 @@ public class login_screen extends AppCompatActivity {
     btn_login.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-  authLogin();
+
+        authLogin();
       }
     });
   }
